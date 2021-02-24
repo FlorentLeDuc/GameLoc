@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -65,6 +67,16 @@ class User implements UserInterface
      * @ORM\Column(type="integer", nullable=true)
      */
     private $user_score;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Offer::class, mappedBy="user")
+     */
+    private $offers;
+
+    public function __construct()
+    {
+        $this->offers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -215,6 +227,36 @@ class User implements UserInterface
     public function setUserScore(?int $user_score): self
     {
         $this->user_score = $user_score;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Offer[]
+     */
+    public function getOffers(): Collection
+    {
+        return $this->offers;
+    }
+
+    public function addOffer(Offer $offer): self
+    {
+        if (!$this->offers->contains($offer)) {
+            $this->offers[] = $offer;
+            $offer->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOffer(Offer $offer): self
+    {
+        if ($this->offers->removeElement($offer)) {
+            // set the owning side to null (unless already changed)
+            if ($offer->getUser() === $this) {
+                $offer->setUser(null);
+            }
+        }
 
         return $this;
     }
