@@ -52,6 +52,11 @@ class Offer
      */
     private $statement;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="offers")
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +142,18 @@ class Offer
     public function setStatement(int $statement): self
     {
         $this->statement = $statement;
+
+        return $this;
+    }
+
+    public function getUser(): ?user
+    {
+        return $this->user;
+    }
+
+    public function setUser(?user $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
