@@ -41,6 +41,31 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $creation_date;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $adress;
+
+    /**
+     * @ORM\Column(type="string", length=5)
+     */
+    private $zipcode;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $rent_score;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $user_score;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -130,6 +155,66 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getCreationDate(): ?\DateTimeInterface
+    {
+        return $this->creation_date;
+    }
+
+    public function setCreationDate(\DateTimeInterface $creation_date): self
+    {
+        $this->creation_date = $creation_date;
+
+        return $this;
+    }
+
+    public function getAdress(): ?string
+    {
+        return $this->adress;
+    }
+
+    public function setAdress(string $adress): self
+    {
+        $this->adress = $adress;
+
+        return $this;
+    }
+
+    public function getZipcode(): ?string
+    {
+        return $this->zipcode;
+    }
+
+    public function setZipcode(string $zipcode): self
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    public function getRentScore(): ?int
+    {
+        return $this->rent_score;
+    }
+
+    public function setRentScore(?int $rent_score): self
+    {
+        $this->rent_score = $rent_score;
+
+        return $this;
+    }
+
+    public function getUserScore(): ?int
+    {
+        return $this->user_score;
+    }
+
+    public function setUserScore(?int $user_score): self
+    {
+        $this->user_score = $user_score;
 
         return $this;
     }
