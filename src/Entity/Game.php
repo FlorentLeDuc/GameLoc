@@ -34,6 +34,12 @@ class Game
      */
     private $offers;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="games")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
     public function __construct()
     {
         $this->offers = new ArrayCollection();
@@ -94,6 +100,18 @@ class Game
                 $offer->setGame(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

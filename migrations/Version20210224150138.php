@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210224145412 extends AbstractMigration
+final class Version20210224150138 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -20,16 +20,16 @@ final class Version20210224145412 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE offer ADD game_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE offer ADD CONSTRAINT FK_29D6873EE48FD905 FOREIGN KEY (game_id) REFERENCES game (id)');
-        $this->addSql('CREATE INDEX IDX_29D6873EE48FD905 ON offer (game_id)');
+        $this->addSql('ALTER TABLE game ADD category_id INT NOT NULL');
+        $this->addSql('ALTER TABLE game ADD CONSTRAINT FK_232B318C12469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
+        $this->addSql('CREATE INDEX IDX_232B318C12469DE2 ON game (category_id)');
     }
 
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE offer DROP FOREIGN KEY FK_29D6873EE48FD905');
-        $this->addSql('DROP INDEX IDX_29D6873EE48FD905 ON offer');
-        $this->addSql('ALTER TABLE offer DROP game_id');
+        $this->addSql('ALTER TABLE game DROP FOREIGN KEY FK_232B318C12469DE2');
+        $this->addSql('DROP INDEX IDX_232B318C12469DE2 ON game');
+        $this->addSql('ALTER TABLE game DROP category_id');
     }
 }
