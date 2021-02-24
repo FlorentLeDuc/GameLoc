@@ -57,6 +57,11 @@ class Offer
      */
     private $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=game::class, inversedBy="offers")
+     */
+    private $game;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,6 +159,18 @@ class Offer
     public function setUser(?user $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getGame(): ?game
+    {
+        return $this->game;
+    }
+
+    public function setGame(?game $game): self
+    {
+        $this->game = $game;
 
         return $this;
     }
