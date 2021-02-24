@@ -34,6 +34,11 @@ class Category
      */
     private $games;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class)
+     */
+    private $subcat;
+
     public function __construct()
     {
         $this->games = new ArrayCollection();
@@ -94,6 +99,18 @@ class Category
                 $game->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSubcat(): ?self
+    {
+        return $this->subcat;
+    }
+
+    public function setSubcat(?self $subcat): self
+    {
+        $this->subcat = $subcat;
 
         return $this;
     }
