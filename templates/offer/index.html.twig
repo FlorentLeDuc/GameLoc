@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offer index{% endblock %}
+
+{% block body %}
+    <h1>Offer index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Picture</th>
+                <th>Publication_date</th>
+                <th>Selling_price</th>
+                <th>Rent_price</th>
+                <th>Statement</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offer in offers %}
+            <tr>
+                <td>{{ offer.id }}</td>
+                <td>{{ offer.title }}</td>
+                <td>{{ offer.content }}</td>
+                <td>{{ offer.picture }}</td>
+                <td>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ offer.sellingPrice }}</td>
+                <td>{{ offer.rentPrice }}</td>
+                <td>{{ offer.statement }}</td>
+                <td>
+                    <a href="{{ path('offer_show', {'id': offer.id}) }}">show</a>
+                    <a href="{{ path('offer_edit', {'id': offer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('offer_new') }}">Create new</a>
+{% endblock %}

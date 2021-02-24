@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offer{% endblock %}
+
+{% block body %}
+    <h1>Offer</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ offer.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ offer.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ offer.content }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ offer.picture }}</td>
+            </tr>
+            <tr>
+                <th>Publication_date</th>
+                <td>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Selling_price</th>
+                <td>{{ offer.sellingPrice }}</td>
+            </tr>
+            <tr>
+                <th>Rent_price</th>
+                <td>{{ offer.rentPrice }}</td>
+            </tr>
+            <tr>
+                <th>Statement</th>
+                <td>{{ offer.statement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('offer_index') }}">back to list</a>
+
+    <a href="{{ path('offer_edit', {'id': offer.id}) }}">edit</a>
+
+    {{ include('offer/_delete_form.html.twig') }}
+{% endblock %}
