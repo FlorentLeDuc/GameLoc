@@ -62,6 +62,12 @@ class Offer
      */
     private $game;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="offers")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +177,18 @@ class Offer
     public function setGame(?game $game): self
     {
         $this->game = $game;
+
+        return $this;
+    }
+
+    public function getCategory(): ?category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

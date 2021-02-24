@@ -39,9 +39,15 @@ class Category
      */
     private $subcat;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Offer::class, mappedBy="category")
+     */
+    private $offers;
+
     public function __construct()
     {
         $this->games = new ArrayCollection();
+        $this->offers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -111,6 +117,36 @@ class Category
     public function setSubcat(?self $subcat): self
     {
         $this->subcat = $subcat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Offer[]
+     */
+    public function getOffers(): Collection
+    {
+        return $this->offers;
+    }
+
+    public function addOffer(Offer $offer): self
+    {
+        if (!$this->offers->contains($offer)) {
+            $this->offers[] = $offer;
+            $offer->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOffer(Offer $offer): self
+    {
+        if ($this->offers->removeElement($offer)) {
+            // set the owning side to null (unless already changed)
+            if ($offer->getCategory() === $this) {
+                $offer->setCategory(null);
+            }
+        }
 
         return $this;
     }
