@@ -8,6 +8,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Doctrine\ORM\EntityRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class GameType extends AbstractType
 {
@@ -22,11 +24,12 @@ class GameType extends AbstractType
             
                 // uses the User.username property as the visible option string
                 'choice_label' => 'title',
-            
-                // used to render a select box, check boxes or radios
-                'multiple' => true,
-                'expanded' => true,
-            ])
+                    
+                    // used to render a select box, check boxes or radios
+                    'multiple' => false,
+                    'expanded' => true,
+                    ])
+                    
         ;
     }
 
