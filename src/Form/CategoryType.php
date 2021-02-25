@@ -6,6 +6,9 @@ use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+
 
 class CategoryType extends AbstractType
 {
@@ -14,7 +17,17 @@ class CategoryType extends AbstractType
         $builder
             ->add('title')
             ->add('content')
-            ->add('subcat')
+            ->add('subcat', EntityType::class, [
+                // looks for choices from this entity
+                'class' => Category::class,
+            
+                // uses the User.username property as the visible option string
+                'choice_label' => 'label',
+            
+                // used to render a select box, check boxes or radios
+                'multiple' => true,
+                'expanded' => true,
+            ])
         ;
     }
 
