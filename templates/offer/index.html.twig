@@ -10,12 +10,15 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
+                <th>Game</th>
+                <th>Category</th>
                 <th>Content</th>
                 <th>Picture</th>
                 <th>Publication_date</th>
                 <th>Selling_price</th>
                 <th>Rent_price</th>
                 <th>Statement</th>
+                <th>User</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -24,12 +27,15 @@
             <tr>
                 <td>{{ offer.id }}</td>
                 <td>{{ offer.title }}</td>
+                <td>{{ offer.game.title }}</td>
+                <td>{{ offer.category.title }}</td>
                 <td>{{ offer.content }}</td>
                 <td>{{ offer.picture }}</td>
                 <td>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ offer.sellingPrice }}</td>
                 <td>{{ offer.rentPrice }}</td>
                 <td>{{ offer.statement }}</td>
+                <td>{{ offer.user.username }}</td>
                 <td>
                     <a href="{{ path('offer_show', {'id': offer.id}) }}">show</a>
                     <a href="{{ path('offer_edit', {'id': offer.id}) }}">edit</a>

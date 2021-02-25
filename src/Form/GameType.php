@@ -8,8 +8,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Doctrine\ORM\EntityRepository;
-use Doctrine\Common\Collections\ArrayCollection;
+// use Doctrine\ORM\EntityRepository;
+// use Doctrine\Common\Collections\ArrayCollection;
 
 class GameType extends AbstractType
 {

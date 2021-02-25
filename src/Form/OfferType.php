@@ -3,9 +3,13 @@
 namespace App\Form;
 
 use App\Entity\Offer;
+use App\Entity\User;
+use App\Entity\Category;
+use App\Entity\Game;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class OfferType extends AbstractType
 {
@@ -19,9 +23,41 @@ class OfferType extends AbstractType
             ->add('selling_price')
             ->add('rent_price')
             ->add('statement')
-            ->add('user')
-            ->add('game')
-            ->add('category')
+            ->add('user', EntityType::class, [
+                // looks for choices from this entity
+                'class' => User::class,
+            
+                // uses the User.username property as the visible option string
+                'choice_label' => 'username',
+                    
+                    // used to render a select box, check boxes or radios
+                    'multiple' => false,
+                    'expanded' => true,
+                    ])
+            
+            ->add('game', EntityType::class, [
+                // looks for choices from this entity
+                'class' => Game::class,
+            
+                // uses the User.username property as the visible option string
+                'choice_label' => 'title',
+                    
+                    // used to render a select box, check boxes or radios
+                    'multiple' => false,
+                    'expanded' => true,
+                    ])
+
+            ->add('category', EntityType::class, [
+                // looks for choices from this entity
+                'class' => Category::class,
+            
+                // uses the User.username property as the visible option string
+                'choice_label' => 'title',
+                    
+                    // used to render a select box, check boxes or radios
+                    'multiple' => false,
+                    'expanded' => true,
+                    ])
         ;
     }
 
