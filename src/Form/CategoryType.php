@@ -3,10 +3,13 @@
 namespace App\Form;
 
 use App\Entity\Category;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+// use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+// use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Doctrine\ORM\EntityRepository;
 
 
 
@@ -18,16 +21,22 @@ class CategoryType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('subcat', EntityType::class, [
-                // looks for choices from this entity
                 'class' => Category::class,
             
                 // uses the User.username property as the visible option string
-                'choice_label' => 'label',
+                'choice_label' => 'title',
+                'query_builder' => function (EntityRepository $er) {
+                    
+                    return $er->createQueryBuilder('c')
+                        ->where('c.id < 3')
+                        ->orderBy('c.id', 'ASC');
+                },
             
                 // used to render a select box, check boxes or radios
-                'multiple' => true,
+                'multiple' => false,
                 'expanded' => true,
-            ])
+            ]);
+
         ;
     }
 
