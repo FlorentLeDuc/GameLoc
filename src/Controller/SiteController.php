@@ -5,14 +5,17 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\OfferRepository;
 
 class SiteController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(OfferRepository $offerRepository): Response
     {
+        $offers = $offerRepository->findBy([], [ "publication_date" => "DESC"]);
         return $this->render('site/index.html.twig', [
             'controller_name' => 'SiteController',
+            'offers' => $offers,
         ]);
     }
 
@@ -37,20 +40,7 @@ class SiteController extends AbstractController
             'controller_name' => 'SiteController',
         ]);
     }
-    #[Route('/offer', name: 'offer')]
-    public function offer(): Response
-    {
-        return $this->render('site/offer.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
-    #[Route('/offers', name: 'offers')]
-    public function offers(): Response
-    {
-        return $this->render('site/offers.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
+
     #[Route('/games', name: 'games')]
     public function games(): Response
     {

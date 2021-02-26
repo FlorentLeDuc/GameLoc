@@ -2,6 +2,53 @@
 
 {% block title %}Hello SiteController!{% endblock %}
 
-{% block body %}
 
+
+{% block body %}
+    <h1>Offer index</h1>
+
+    <table class="table">
+        <thead>
+            {# <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Game</th>
+                <th>Category</th>
+                <th>Content</th>
+                <th>Picture</th>
+                <th>Publication_date</th>
+                <th>Selling_price</th>
+                <th>Rent_price</th>
+                <th>Statement</th>
+                <th>User</th>
+                <th>actions</th>
+            </tr>
+        </thead> #}
+        <tbody>
+        {% for offer in offers %}
+		<div class="card" style="width: 18rem;">
+			<h3>{{ offer.title }}</h3>
+			<h4>{{ offer.game.title }}</h4>
+			<h5>{{ offer.category.title }}</h5>
+ 		 	<img class="card-img-top" src="{{ offer.picture }}" alt="Card image cap">
+  			<div class="card-body">
+    			<p class="card-text">{{ offer.content }}</p>
+				<p>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</p>
+				<a href="{{ offer.user.username }}">{{ offer.user.username }}</a>
+				<p>{{ offer.sellingPrice }}</p>
+				<p>{{ offer.rentPrice }}</p>
+				<p>{{ offer.statement }}</p>
+				 <a href="{{ path('offer_show', {'id': offer.id}) }}">show</a>
+ 			</div>
+		</div>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('offer_new') }}">Create new</a>
 {% endblock %}
+
