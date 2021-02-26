@@ -25,11 +25,12 @@
 					</div>
 					<nav class"col-md-9 col-xs-12">
 						<ul class="nav-list">
-							<a href="#">Home</a>
-							<a href="#">Recherche</a>
-							<a href="#">Annonces</a>
-							<a href="#">Portfolio</a>
-							<a href="#">Contact</a>
+							<a href="{{ path('index') }}">Home</a>
+							<a href="{{ path('game') }}">game</a>
+							<a href="{{ path('games') }}">games</a>
+							<a href="{{ path('offer') }}">offer</a>
+							<a href="{{ path('offers') }}">offers</a>
+							<a href="{{ path('profil') }}">profil</a>
 					</nav>
 					{% if is_granted('ROLE_ADMIN') %}
 						<div class="mb-3">

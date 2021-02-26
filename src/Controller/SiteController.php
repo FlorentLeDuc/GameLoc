@@ -58,4 +58,11 @@ class SiteController extends AbstractController
             'controller_name' => 'SiteController',
         ]);
     }
+    #[Route('/profil', name: 'profil')]
+    public function profil(): Response
+    {
+        return $this->render('site/profil.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
 }

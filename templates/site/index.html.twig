@@ -3,51 +3,5 @@
 {% block title %}Hello SiteController!{% endblock %}
 
 {% block body %}
-        <a href="#">Annonces</a>
-        <a href="#">Categories</a>
-        <a href="#">Utilisateurs</a>
-        <a href="#">Jeux</a>
+
 {% endblock %}
-{% block navbar %}
-				<div
-					class="row">
-
-					<!-- Ican Bar Nav -->
-					<i class="icon fa fa-bars fa-2x"></i>
-
-					<!-- Mon logo -->
-					<div class="col-md-3 col-xs-12">
-						<div class="logo">
-							{# <img src="images/logo.png" alt="O"> #}
-						</div>
-					</div>
-					<nav class"col-md-9 col-xs-12">
-						<ul class="nav-list">
-							<a href="#">Home</a>
-							<a href="#">Recherche</a>
-							<a href="#">Annonces</a>
-							<a href="#">Portfolio</a>
-							<a href="#">Contact</a>
-					</nav>
-					{% if is_granted('ROLE_ADMIN') %}
-						<div class="mb-3">
-							Bienvenue
-							{{ app.user.username }},
-							<a href="#">Admin</a>
-							<a href="#">Déconnexion</a>
-						</div>
-					{% elseif is_granted('ROLE_ADMIN')%}
-						<div class="mb-3">
-							Bienvenue
-							{{ app.user.username }},
-							<a href="#">Espace membre</a>
-							<a href="#">Déconnexion</a>
-						</div>
-					{% else %}
-						<nav>
-							<a href="#">Créez votre compte</a>
-							<a href="#">Connexion</a>
-						</nav>
-					{% endif %}
-				</div>
-			{% endblock %}
