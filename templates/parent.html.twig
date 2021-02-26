@@ -11,25 +11,40 @@
     <body>
     <header>
 			{% block navbar %}
-				<div
-					class="row">
-
-					<!-- Ican Bar Nav -->
-					<i class="icon fa fa-bars fa-2x"></i>
-
-					<!-- Mon logo -->
-					<div class="col-md-3 col-xs-12">
-						<div class="logo">
-							{# <img src="images/logo.png" alt="O"> #}
-						</div>
-					</div>
-					<nav class"col-md-9 col-xs-12">
-						<ul class="nav-list">
-							<a href="{{ path('index') }}">Home</a>
-							<a href="{{ path('game') }}">game</a>
-							<a href="{{ path('games') }}">games</a>
-							<a href="{{ path('profil') }}">profil</a>
-					</nav>
+			<div class="row">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+                        <a class="navbar-brand" href="#">GameLoc</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{ path('index') }}">Home<span class="sr-only"></span></a>
+                                </li>
+                                <li class="nav-item">
+                                     <a class="nav-link" href="{{ path('game') }}">game</a>
+                                </li>
+                                <li class="nav-item">
+                                     <a class="nav-link" href="{{ path('games') }}">games</a>
+                                </li>
+                                <li class="nav-item">
+                                     <a class="nav-link" href="{{ path('profil') }}">profil</a>
+                                </li>
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Jeux </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Jeux Videos</a>
+                                    <a class="dropdown-item" href="#">Jeux de societes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 					{% if is_granted('ROLE_ADMIN') %}
 						<div class="mb-3">
 							Bienvenue
@@ -50,7 +65,7 @@
 							<a href="#">connexion</a>
 						</nav>
 					{% endif %}
-				</div>
+			</div>
 			{% endblock %}
 		</header>
         {% block body %}
@@ -60,6 +75,56 @@
         <a href="{{ path('game_index') }}">Jeux</a> #}
         {% endblock %}
     </body>
+       <footer>
+    {% block formulaire %}
+		<div class="center box">
+                <h2>Address</h2>
+                <div class="content">
+                    <div class="place">
+                        <a href="#"><span class="fas fa-map-marker-alt"></span></a>
+                        <span class="text ">Marseille - Toulouse, France</span></a>
+                    </div>
+                    <div class="phone">
+                        <a href="#"><span class="fas fa-phone-alt"></span></a>
+                        <span class="text "> 09 77 38 64 12</span>
+                    </div>
+                    <div class="email">
+                        <a href="gameloc@gmail.com"><span class="fas fa-envelope"></span></a>
+                        <span class="text ">gameloc@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+
+   		<div class="right box">
+                	<h2 id="contact">Contact us</h2>
+                	<div class="content">
+                    	<form action="#">
+                       	 <div class="email">
+                           		<div class="text">Email *</div>
+                            	<input type="email" name="user_email" required>
+                        </div>
+                        <div class="msg">
+                            <div class="text">Message *</div>
+                            <textarea rows="2" cols="25" name="user_message" required></textarea>
+                        </div>
+                        <div class="btn">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <a href=""></a>
+            <center>
+                <span class="credit">Created By <a href="#">GameLoc Entreprise</a>  </span>
+                <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
+            </center>
+        </div>
+{% endblock %}
+    </footer>
 </html>
 
 
