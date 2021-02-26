@@ -65,7 +65,7 @@
 							<a href="#">connexion</a>
 						</nav>
 					{% endif %}
-				</div>
+			</div>
 			{% endblock %}
 		</header>
         {% block body %}
@@ -75,6 +75,54 @@
         <a href="{{ path('game_index') }}">Jeux</a> #}
         {% endblock %}
     </body>
+       <footer>
+    {% block formulaire %}
+		<div class="center box">
+                <h2>Address</h2>
+                <div class="content">
+                    <div class="place">
+                        <a href="#"><span class="fas fa-map-marker-alt"></span></a>
+                        <span class="text ">Marseille - Toulouse, France</span></a>
+                    </div>
+                    <div class="phone">
+                        <a href="#"><span class="fas fa-phone-alt"></span></a>
+                        <span class="text "> 09 77 38 64 12</span>
+                    </div>
+                    <div class="email">
+                        <a href="gameloc@gmail.com"><span class="fas fa-envelope"></span></a>
+                        <span class="text ">gameloc@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+
+   		<div class="right box">
+                	<h2 id="contact">Contact us</h2>
+                	<div class="content">
+                    	<form action="#">
+                       	 <div class="email">
+                           		<div class="text">Email *</div>
+                            	<input type="email" name="user_email" required>
+                        </div>
+                        <div class="msg">
+                            <div class="text">Message *</div>
+                            <textarea rows="2" cols="25" name="user_message" required></textarea>
+                        </div>
+                        <div class="btn">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <a href=""></a>
+            <center>
+                <span class="credit">Created By <a href="#">GameLoc Entreprise</a>  </span>
+                <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
+            </center>
+        </div>
+{% endblock %}
+    </footer>
 </html>
-
-
