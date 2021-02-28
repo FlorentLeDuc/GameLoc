@@ -1,3 +1,8 @@
+
+/*****************************************************
+*                    BACKGROUND                        *
+*****************************************************/
+
 .home{
     height: 100vh; 
     background-image: url('../uploads/images/pexels-cottonbro-4842488.jpg');
@@ -7,6 +12,28 @@
 }
 
 
+/*****************************************************
+*                    HEADER                         *
+*****************************************************/
+
+
+header {
+    height: auto;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.377);
+}
+
 
 
 /*****************************************************
@@ -14,14 +41,20 @@
 *****************************************************/
 
 
-.nav-links{
+.nav-link a:hover{
     justify-content: space-between;
+    color: #a6a867;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #a6a867;
+    font-weight: bold;
     
 }
 
 .sticky{
-    background: rgba(255, 255, 255, 0.5);
-    color: rgba(0, 0, 0, 0.90);
+    background: rgba(0, 0, 0, 0.664);
+    /* background: rgba(174, 174, 129, 0.842); */
+    color: rgba(0, 0, 0, 0.664);
     position: fixed;
     z-index: 1;
     top: 0;
@@ -34,7 +67,7 @@
   }
   .navbar-brand>img {
     padding: 15px;
-    width: 70%;
+    width: 80%;
   }
 
 

@@ -1,55 +1,56 @@
 {% extends 'parent.html.twig' %}
 
-{% block title %}Hello SiteController!{% endblock %}
-
+{% block title %}Hello SiteController!
+{% endblock %}
 
 
 {% block body %}
-  <section class="sections home text-center">
-             <div class="overlay">
-                <div class="container">
-                    <div class="home-content">
-                        {# <h3 id="home" class="home-title">Olivier RIGAH</h3>
-                        <p class="lead home-desc line-1 anim-typewriter">
-                            Bonjour, Je suis Olivier, Web Developer.
-                        </p>
-                        <buton><a href="#contact" class="btn button">Me contacter</a></buton>
-                        <buton class="btn button">Discover more</buton> #}
-                    </div>
-                </div>
-            </div>
-    </section>
-    <h1>Offer index</h1>
-    <table class="table">
-        <tbody>
-		<section class="container">
-			<div class="row">
-        {% for offer in offers %}
-					<div class="col-6 col-md-4">
-						<div class="card" style="width: 18rem;">
-							<h3>{{ offer.title }}</h3>
-							<h4>{{ offer.game.title }}</h4>
-							<h5>{{ offer.category.title }}</h5>
-							<img class="card-img-top" src="{{ offer.picture }}" alt="Card image cap">
-							<div class="card-body">
-								<p class="card-text">{{ offer.content }}</p>
-								<p>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</p>
-								<a href="{{ offer.user.username }}">{{ offer.user.username }}</a>
-								<p>{{ offer.sellingPrice }}</p>
-								<p>{{ offer.rentPrice }}</p>
-								<p>{{ offer.statement }}</p>
-								<a href="{{ path('offer_show', {'id': offer.id}) }}">show</a>
-							</div>
-						</div>
+	<div class="main">
+		<section class="sections home text-center">
+			<div class="overlay">
+				<div class="container">
+					<div
+						class="home-content">{# <h3 id="home" class="home-title">Olivier RIGAH</h3>
+							                        <p class="lead home-desc line-1 anim-typewriter">
+							                            Bonjour, Je suis Olivier, Web Developer.
+							                        </p>
+							                        <buton><a href="#contact" class="btn button">Me contacter</a></buton>
+							                        <buton class="btn button">Discover more</buton> #}
 					</div>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
+				</div>
 			</div>
 		</section>
-        </tbody>
-    </table>
+		<h1>Offer index</h1>
+		<table class="table">
+			<tbody>
+				<section class="container">
+					<div class="row">
+						{% for offer in offers %}
+							<div class="col-6 col-md-4">
+								<div class="card" style="width: 18rem;">
+									<h3>{{ offer.title }}</h3>
+									<h4>{{ offer.game.title }}</h4>
+									<h5>{{ offer.category.title }}</h5>
+									<img class="card-img-top" src="{{ offer.picture }}" alt="Card image cap">
+									<div class="card-body">
+										<p class="card-text">{{ offer.content }}</p>
+										<p>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</p>
+										<a href="{{ offer.user.username }}">{{ offer.user.username }}</a>
+										<p>{{ offer.sellingPrice }}</p>
+										<p>{{ offer.rentPrice }}</p>
+										<p>{{ offer.statement }}</p>
+										<a href="{{ path('offer_show', {'id': offer.id}) }}">show</a>
+									</div>
+								</div>
+							</div>
+						{% else %}
+							<tr>
+								<td colspan="9">no records found</td>
+							</tr>
+						{% endfor %}
+					</div>
+				</section>
+			</tbody>
+		</table>
+	</div>
 {% endblock %}
-
