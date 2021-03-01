@@ -11,6 +11,46 @@
     position: relative;
 }
 
+.subheading{ 
+color: cornsilk;
+font-size: 25px;
+}
+
+
+
+/*****************************************************
+*                    BTN SCROLL                         *
+*****************************************************/
+
+#section08 a {
+    padding-top: 60px;
+  }
+  #section08 a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 50px;
+    margin-left: -15px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    box-sizing: border-box;
+  }
+  #section08 a span::before {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #fff;
+    border-radius: 100%;
+    box-sizing: border-box;
+  }
+
+
+
 
 
 /*****************************************************
