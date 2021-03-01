@@ -55,4 +55,28 @@ class SiteController extends AbstractController
             'controller_name' => 'SiteController',
         ]);
     }
+
+    #[Route('/offers', name: 'offers')]
+    public function offers(): Response
+    {
+        return $this->render('site/offers.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
+    
+    #[Route('/register', name: 'register')]
+    public function register(): Response
+    {
+        return $this->render('site/register.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
+    
+    #[Route('/login', name: 'login')]
+    public function login(): Response
+    {
+        return $this->render('site/login.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
 }

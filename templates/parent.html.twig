@@ -23,20 +23,36 @@
                         <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent" >
                             <ul class="navbar-nav mr-auto nav-link">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ path('index') }}">HOME<span class="sr-only"></span></a>
+                                    <a class="nav-link" href="{{ path('index') }}">ACCEUIL<span class="sr-only"></span></a>
                                 </li>
                                 <li class="nav-item">
-                                     <a class="nav-link" href="{{ path('game') }}">GAME</a>
+                                     <a class="nav-link" href="{{ path('offers') }}">ANNONCES</a>
                                 </li>
-                                <li class="nav-item">
-                                     <a class="nav-link" href="{{ path('games') }}">GAMES</a>
-                                </li>
-                                <li class="nav-item">
-                                     <a class="nav-link" href="{{ path('profil') }}">PROFIL</a>
-                                </li>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <div class="mb-3">
+                                        Bienvenue {{ app.user.username }},
+                                        <a class="nav-link" href="{{ path('admin') }}">admin</a>
+                                        <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                                    </div>
+                                {% elseif is_granted('ROLE_USER')%}
+                                    <div class="mb-3">
+                                        Bienvenue {{ app.user.username }},
+                                        <a class="nav-link" href="{{ path('profil') }}">PROFIL</a>
+                                        <a class="nav-link" href="{{ path('membre') }}">espace membre</a>
+                                        <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                                        <a href=""></a>
+                                    </div>
+                                {% else %}
+                                    <li  class="nav-item">
+                                        <a class="nav-link" href="{{ path('app_register') }}">CREEZ VOTRE COMPTE</a>
+                                    </li>
+                                    <li  class="nav-item">
+                                        <a class="nav-link" href="{{ path('app_login') }}">CONNEXION</a>
+                                    </li>
+                                {% endif %}
+
                                 <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"    role="button" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false">
-                                    JEUX </a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"    role="button" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false">JEUX </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="#">Jeux Videos</a>
                                         <a class="dropdown-item" href="#">Jeux de societes</a>
@@ -47,26 +63,6 @@
                             </ul>
                     </div>
                 </nav>
-					{% if is_granted('ROLE_ADMIN') %}
-						<div class="mb-3">
-							Bienvenue
-							{{ app.user.username }},
-							<a href="#">admin</a>
-							<a href="#">Déconnexion</a>
-						</div>
-					{% elseif is_granted('ROLE_ADMIN')%}
-						<div class="mb-3">
-							Bienvenue
-							{{ app.user.username }},
-							<a href="#">espace membre</a>
-							<a href="#">Déconnexion</a>
-						</div>
-					{% else %}
-						<nav>
-							<a href="#">créez votre compte</a>
-							<a href="#">connexion</a>
-						</nav>
-					{% endif %}
 			</div>
 			{% endblock %}
 		</header>
