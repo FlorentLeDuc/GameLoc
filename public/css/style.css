@@ -3,7 +3,7 @@
 *                    BACKGROUND                        *
 *****************************************************/
 
-.home{
+header{
     height: 100vh; 
     background-image: url('../uploads/images/pexels-cottonbro-4842488.jpg');
     background-size: cover;
@@ -266,4 +266,11 @@ padding: 0 2px;
 
 
 
+.card-group{
+    padding: 5em;
+}
+
+.card{
+    padding: 3em;
+}
 
