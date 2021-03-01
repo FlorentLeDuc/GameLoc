@@ -167,6 +167,24 @@ nav{
 }
 
 
+/*****************************************************
+*                    BODY                         *
+*****************************************************/
+
+/* CARD */
+
+.card-group{
+    padding: 5em;
+}
+
+.card{
+    padding: 3em;
+}
+
+
+
+
+
 
 
 
@@ -363,13 +381,6 @@ padding: 0 2px;
 
 
 
-.card-group{
-    padding: 5em;
-}
-
-.card{
-    padding: 3em;
-}
 
 .offer_title{
     display: flex;
@@ -380,6 +391,34 @@ padding: 0 2px;
 /*****************************************************
 *                    MEDIA QUERY                     *
 *****************************************************/
+
+/* HEADER */
+
+@media (max-width:575px){
+    header nav .nav-link{
+        display: block;
+        text-align: center;
+        padding: 0;
+    }
+
+    a{
+        text-align: center;
+
+    }
+
+    /* header i.icon{
+        position: absolute;
+        right: 30px;
+        top: 32px;
+        z-index: 10;
+        display: block;
+    } */
+}
+
+
+
+/* FOOTER */
+
 @media screen and (max-width: 900px){
     footer{
         position: relative;
