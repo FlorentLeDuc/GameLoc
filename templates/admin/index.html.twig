@@ -1,4 +1,4 @@
-{% extends 'parent.html.twig' %}
+{% extends 'base.html.twig' %}
 
 
 {% block body %}
@@ -11,18 +11,11 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>
-            <a href="{{ path('user') }}">Gère tes utilisateurs</a>
-        </li>
-        <li>
-            <a href="{{ path('category') }}">Gère les catégories</a>
-        </li>
-        <li>
-            <a href="{{ path('offers') }}">Gère les annonces</a>
-        </li>
-    </ul>
+    <p>This friendly message is coming from:</p> 
+
+            <button type="button" class="btn btn-primary btn-lg" href="{{ path('user') }}">Gère tes utilisateurs</button>
+            <button type="button" class="btn btn-primary btn-lg" href="{{ path('category') }}">Gère les catégories</button>
+            <button type="button" class="btn btn-primary btn-lg" href="{{ path('offers') }}">Gère les annonces</button>
 </div>
 
 
