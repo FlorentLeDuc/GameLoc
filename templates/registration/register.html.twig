@@ -13,13 +13,12 @@
      {# style="border-color: #849460; border-style:solid; border-width: 2px" #}
      >
         {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.username) }}
-            {{ form_row(registrationForm.adress) }}
-            {{ form_row(registrationForm.zipcode) }}
-            {{ form_row(registrationForm.email) }}
-
+            {{ form_row(registrationForm.username, {label: 'Pseudo'}) }}
+            {{ form_row(registrationForm.adress, {label: 'Adresse'}) }}
+            {{ form_row(registrationForm.zipcode, {label: 'Code Postal'}) }}
+            {{ form_row(registrationForm.email, {label: 'Email'}) }}
             {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
-            {{ form_row(registrationForm.agreeTerms) }}
+            {{ form_row(registrationForm.agreeTerms , {label: 'CGU'}) }}
 
             <button type="submit" class="btn">Register</button>
         {{ form_end(registrationForm) }}
