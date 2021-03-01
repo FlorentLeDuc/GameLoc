@@ -365,3 +365,7 @@ padding: 0 2px;
     padding: 3em;
 }
 
+.offer_title{
+    display: flex;
+    justify-content: center;
+}
