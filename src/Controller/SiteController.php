@@ -63,7 +63,7 @@ class SiteController extends AbstractController
     public function offers(OfferRepository $offerRepository): Response
     {
         $offers = $offerRepository->findBy([], [ "publication_date" => "DESC"]);
-        return $this->render('site/index.html.twig', [
+        return $this->render('site/offers.html.twig', [
             'controller_name' => 'SiteController',
             'offers' => $offers,
         ]);
