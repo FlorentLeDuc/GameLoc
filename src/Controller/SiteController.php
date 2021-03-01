@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Offer;
+use App\Form\OfferType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -58,9 +60,19 @@ class SiteController extends AbstractController
     }
 
     #[Route('/offers', name: 'offers')]
-    public function offers(): Response
+    public function offers(OfferRepository $offerRepository): Response
     {
-        return $this->render('site/offers.html.twig', [
+        $offers = $offerRepository->findBy([], [ "publication_date" => "DESC"]);
+        return $this->render('site/index.html.twig', [
+            'controller_name' => 'SiteController',
+            'offers' => $offers,
+        ]);
+    }
+
+    #[Route('/offer', name: 'offer')]
+    public function offer(): Response
+    {
+        return $this->render('site/offer.html.twig', [
             'controller_name' => 'SiteController',
         ]);
     }
