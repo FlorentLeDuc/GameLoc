@@ -11,11 +11,6 @@
     position: relative;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-}
-
 /*****************************************************
 *                    HEADER                         *
 *****************************************************/
@@ -44,6 +39,10 @@ header {
 *                    NAVBAR                          *
 *****************************************************/
 
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
 
 .nav-link a:hover{
     justify-content: space-between;
