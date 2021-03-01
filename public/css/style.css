@@ -377,6 +377,11 @@ padding: 0 2px;
 
 
 
+.offer_title{
+    display: flex;
+    justify-content: center;
+}
+
 
 /*****************************************************
 *                    MEDIA QUERY                     *
