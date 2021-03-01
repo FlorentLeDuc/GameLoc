@@ -17,9 +17,9 @@
         {% endblock %}
     </head>
     <body>
-    <header>
+    <header id="navadmin">
     	{% block navbar %}
-            <div class="row" id="overlay">
+            <div class="row">
 				<nav class="navbar navbar-expand-lg ">
                         <a class="navbar-brand" href="{{ path('index') }}"><img src="../uploads/images/Logofinal2.png" alt="GameLoc"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"aria-expanded="false" aria-label="Toggle navigation">
@@ -27,15 +27,18 @@
                         </button>
                         
                         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
-                            <ul class="navbar-nav mr-auto nav-link">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="{{ path('index') }}">ACCEUIL<span class="sr-only"></span></a>
+                            <ul class="navbar-nav mr-auto nav-link id">
+                                <li class="navadmin">
+                                    <a class="btn btn-primary" href="{{ path('index') }}">RETOUR AU SITE</a>
                                 </li>
-                                <li class="nav-item">
-                                     <a class="nav-link" href="{{ path('offers') }}">ANNONCES</a>
+                                <li class="navadmin">
+                                    <a class="btn btn-primary" href="{{ path('user') }}">UTILISATEURS</a>
                                 </li>
-                                <li>
-                                    <a class="nav-link" href="#contact">CONTACT</a>
+                                <li class="navadmin">
+                                    <a class="btn btn-primary" href="{{ path('category') }}">CATEGORIES</a>
+                                </li>
+                                <li class="navadmin">
+                                     <a class="btn btn-primary" href="{{ path('offers') }}">ANNONCES</a>
                                 </li>
                             </ul>
                         </div>
@@ -44,10 +47,6 @@
         {% endblock %} 
     </header>
         {% block body %}
-        <a href="{{ path('offer_index') }}">annonces</a>
-        <a href="{{ path('category_index') }}">categories</a>
-        <a href="{{ path('user_index') }}">Utilisateurs</a>
-        <a href="{{ path('game_index') }}">Jeux</a>
         {% endblock %}
     </body>
 </html>
