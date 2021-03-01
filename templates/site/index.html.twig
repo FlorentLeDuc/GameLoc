@@ -32,10 +32,10 @@
 		<h1>Offer index</h1>
 		<table class="table">
 			<tbody>
-				<section class="container">
-					<div id ="scroll-btn" class="row">
+				<section>
+					<div id ="scroll-btn" class="row justify-content-md-center">
 						{% for offer in offers %}
-							<div class="col-6 col-md-4">
+							<div class="col col-lg-2">
 								<div class="card" style="width: 18rem;">
 									<h3>{{ offer.title }}</h3>
 									<h4>{{ offer.game.title }}</h4>
