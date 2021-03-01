@@ -6,7 +6,9 @@
 
 {% block body %}
 
-<h1 class="offer_title"> Nos Annonces </h1>
+	<h1 class="offer_title">
+		Nos Annonces
+	</h1>
 
 	<div class="card-group">
 		{% for offer in offers %}
@@ -24,78 +26,5 @@
 				</div>
 			</div>
 		{% endfor %}
-		{% for offer in offers %}
-		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
-			<div class="card-body">
-				<h5>
-					<a href="{{ path('offer_show', {'id': offer.id}) }}" class="card-title">Annonce 2</a>
-				</h5>
-				<p class="card-text">Dolor duis excepteur consequat ut commodo sint Lorem reprehenderit. Id esse laboris enim sunt ad tempor. In elit ut ut mollit eiusmod. Eu eu anim ipsum Lorem commodo est non velit consequat dolor qui cillum. Reprehenderit et in incididunt laboris est esse fugiat esse esse culpa ea exercitation enim dolor. Amet aliqua ad duis laborum labore duis id culpa aute</p>
-				<p class="card-text">
-					<small class="text-muted">Utilisateur 2</small>
-				</p>
-			</div>
-		</div>
-		{% endfor %}
-		{% for offer in offers %}
-		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
-			<div class="card-body">
-				<h5>
-					<a href="{{ path('offer_show', {'id': offer.id}) }}" class="card-title">Annonce 3</a>
-				</h5>
-				<p class="card-text">Dolor duis excepteur consequat ut commodo sint Lorem reprehenderit. Id esse laboris enim sunt ad tempor. In elit ut ut mollit eiusmod. Eu eu anim ipsum Lorem commodo est non velit consequat dolor qui cillum. Reprehenderit et in incididunt laboris est esse fugiat esse esse culpa ea exercitation enim dolor. Amet aliqua ad duis laborum labore duis id culpa aute</p>
-				<p class="card-text">
-					<small class="text-muted">Utilisateur 3</small>
-				</p>
-			</div>
-		</div>
-		{% endfor %}
-	</div>
 
-	<div class="card-group">
-	{% for offer in offers %}
-		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
-			<div class="card-body">
-				<h5>
-					<a href="{{ path('offer_show', {'id': offer.id}) }}" class="card-title">Annonce 4</a>
-				</h5>
-				<p class="card-text">Dolor duis excepteur consequat ut commodo sint Lorem reprehenderit. Id esse laboris enim sunt ad tempor. In elit ut ut mollit eiusmod. Eu eu anim ipsum Lorem commodo est non velit consequat dolor qui cillum. Reprehenderit et in incididunt laboris est esse fugiat esse esse culpa ea exercitation enim dolor. Amet aliqua ad duis laborum labore duis id culpa aute.</p>
-				<p class="card-text">
-					<small class="text-muted">Utilisateur 4</small>
-				</p>
-			</div>
-		</div>
-		{% endfor %}
-		{% for offer in offers %}
-		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
-			<div class="card-body">
-				<h5>
-					<a href="{{ path('offer_show', {'id': offer.id}) }}" class="card-title">Annonce 5</a>
-				</h5>
-				<p class="card-text">Dolor duis excepteur consequat ut commodo sint Lorem reprehenderit. Id esse laboris enim sunt ad tempor. In elit ut ut mollit eiusmod. Eu eu anim ipsum Lorem commodo est non velit consequat dolor qui cillum. Reprehenderit et in incididunt laboris est esse fugiat esse esse culpa ea exercitation enim dolor. Amet aliqua ad duis laborum labore duis id culpa aute</p>
-				<p class="card-text">
-					<small class="text-muted">Utilisateur 5</small>
-				</p>
-			</div>
-		</div>
-		{% endfor %}
-		{% for offer in offers %}
-		<div class="card">
-			<img class="card-img-top" src="..." alt="Card image cap">
-			<div class="card-body">
-				<h5>
-					<a href="{{ path('offer_show', {'id': offer.id}) }}" class="card-title">Annonce 6</a>
-				</h5>
-				<p class="card-text">Dolor duis excepteur consequat ut commodo sint Lorem reprehenderit. Id esse laboris enim sunt ad tempor. In elit ut ut mollit eiusmod. Eu eu anim ipsum Lorem commodo est non velit consequat dolor qui cillum. Reprehenderit et in incididunt laboris est esse fugiat esse esse culpa ea exercitation enim dolor. Amet aliqua ad duis laborum labore duis id culpa aute</p>
-				<p class="card-text">
-					<small class="text-muted">Utilisateur 6</small>
-				</p>
-			</div>
-		</div>
-		{% endfor %}
-	</div>
 {% endblock %}
