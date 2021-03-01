@@ -15,4 +15,29 @@ class AdminController extends AbstractController
             'controller_name' => 'AdminController',
         ]);
     }
+
+    #[Route('/admin/user', name: 'user')]
+    public function user(): Response
+    {
+        return $this->render('user/index.html.twig', [
+            'controller_name' => 'userController',
+        ]);
+    }
+
+    #[Route('/admin/category', name: 'category')]
+    public function category(): Response
+    {
+        return $this->render('category/index.html.twig', [
+            'controller_name' => 'categoryController',
+        ]);
+    }
+
+    #[Route('/admin/offer', name: 'offer')]
+    public function offer(): Response
+    {
+        return $this->render('offer/index.html.twig', [
+            'controller_name' => 'offerController',
+        ]);
+    }
+
 }
