@@ -3,7 +3,7 @@
 *                    BACKGROUND                        *
 *****************************************************/
 
-header{
+.home{
     height: 100vh; 
     background-image: url('../uploads/images/pexels-cottonbro-4842488.jpg');
     background-size: cover;
