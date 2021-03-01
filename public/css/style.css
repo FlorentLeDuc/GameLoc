@@ -370,3 +370,17 @@ padding: 0 2px;
 /*****************************************************
 *                    MEDIA QUERY                     *
 *****************************************************/
+@media screen and (max-width: 900px){
+    footer{
+        position: relative;
+        bottom: 0px; 
+    }
+
+    .main-content{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box{
+        margin: 5px 0;
+    }
+}
