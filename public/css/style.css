@@ -11,6 +11,8 @@ header{
     position: relative;
 }
 
+
+
 /*****************************************************
 *                    HEADER                         *
 *****************************************************/
@@ -31,6 +33,32 @@ header {
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.377);
+}
+
+.home .home-content{
+    position: absolute;
+    top :50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.home .home-title{
+    color: #fff;
+    font-size : 60px;
+    margin-bottom: 20px;
+}
+
+.home .home-desc{
+    color: #fff;
+    font-size: 50px;
+}
+
+.home .button{
+    background:  #aeae81d3;
+    color: #fff;
+    width: 150px;
+    text-align: center;
+    padding: 10px 0;
 }
 
 
@@ -77,6 +105,19 @@ header {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 /*****************************************************
 *                    FOOTER                          *
