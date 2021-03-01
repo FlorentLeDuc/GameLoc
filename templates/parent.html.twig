@@ -31,16 +31,20 @@
                                 <li>
                                     <a class="nav-link" href="#contact">CONTACT</a>
                                 </li>
+                                <li>
+                                    <a class="nav-link" href="{{ path('admin') }}">admin</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="{{ path('profil') }}">PROFIL</a>
+                                </li>
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <div class="mb-3">
                                         Bienvenue {{ app.user.username }},
-                                        <a class="nav-link" href="{{ path('admin') }}">admin</a>
                                         <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
                                     </div>
                                 {% elseif is_granted('ROLE_USER')%}
                                     <div class="mb-3">
                                         Bienvenue {{ app.user.username }},
-                                        <a class="nav-link" href="{{ path('profil') }}">PROFIL</a>
                                         <a class="nav-link" href="{{ path('membre') }}">espace membre</a>
                                         <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
                                         <a href=""></a>
