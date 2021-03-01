@@ -26,6 +26,7 @@ class SiteController extends AbstractController
             'controller_name' => 'SiteController',
         ]);
     }
+    
     #[Route('/game', name: 'game')]
     public function game(): Response
     {
