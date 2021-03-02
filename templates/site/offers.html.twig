@@ -13,7 +13,9 @@
 	<div class="card-group">
 		{% for offer in offers %}
 			<div class="card">
-				<img class="card-img-top" src="..." alt="Card image cap">
+				{% if offer.picture %}
+					<div><img src="{{ asset('uploads/' ~ offer.picture) }}" class="img-fluid"></div>
+				{% endif %}
 				<div class="card-body">
 
 					<h5>

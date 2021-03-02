@@ -53,6 +53,14 @@ class OfferController extends AbstractController
                             } catch (FileException $e) {
                                 // ... handle exception if something happens during file upload
                             }
+
+                            // supprimer l'image d'avant
+                            $dossierUpload = $this->getParameter('images_directory');
+        
+                            $fichierImage = "$dossierUpload/" . $offer->getPicture();
+                            if (is_file($fichierImage)) {
+                            unlink($fichierImage);
+                            }
             
                             // updates the 'imageFilename' property to store the PDF file name
                             // instead of its contents
