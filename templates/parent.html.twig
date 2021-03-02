@@ -12,57 +12,6 @@
 	<body>
 		<header>
 			{% block navbar %}
-				{# <nav class="navbar navbar-expand-lg navbar-light bg-light">
-					<a class="navbar-brand" href="#">Navbar</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon "></span>
-					</button>
-
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto nav-link">
-								<li class="nav-item active">
-									<a class="nav-link" href="{{ path('index') }}">ACCEUIL<span class="sr-only"></span>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="{{ path('offers') }}">ANNONCES</a>
-								</li>
-								<li>
-									<a class="nav-link" href="#contact">CONTACT</a>
-								</li>
-								<li>
-									<a class="nav-link" href="{{ path('admin') }}">admin</a>
-								</li>
-								<li>
-									<a class="nav-link" href="{{ path('profil') }}">PROFIL</a>
-								</li>
-								{% if is_granted('ROLE_ADMIN') %}
-									<div class="mb-3">
-										Bienvenue
-										{{ app.user.username }},
-										<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
-									</div>
-								{% elseif is_granted('ROLE_USER')%}
-									<div class="mb-3">
-										Bienvenue
-										{{ app.user.username }},
-										<a class="nav-link" href="{{ path('admin') }}">espace membre</a>
-										<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
-										<a href=""></a>
-									</div>
-								{% else %}
-									<li class="nav-item">
-										<a class="nav-link" href="{{ path('app_register') }}">CREEZ VOTRE COMPTE</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="{{ path('app_login') }}">CONNEXION</a>
-									</li>
-								{% endif %}
-							</ul>
-					</div>
-				</nav> #}
-
-				{# <div><img src="../uploads/images/pexels-cottonbro-4842488.jpg" alt="#"></div> #}
 				<div class="row" id="overlay">
 					<nav class="navbar navbar-expand-lg navbar-light">
 						<a class="navbar-brand" href="{{ path('index') }}"><img id="logo" src="{{ asset('uploads/images/Logofinal2.png') }}" alt="GameLoc"></a>
@@ -85,9 +34,6 @@
 								<li>
 									<a class="nav-link" href="{{ path('admin') }}">admin</a>
 								</li>
-								<li>
-									<a class="nav-link" href="{{ path('profil') }}">PROFIL</a>
-								</li>
 								{% if is_granted('ROLE_ADMIN') %}
 									<div class="mb-3">
 										Bienvenue
@@ -96,11 +42,19 @@
 									</div>
 								{% elseif is_granted('ROLE_USER')%}
 									<div class="mb-3">
-										Bienvenue
-										{{ app.user.username }},
-										<a class="nav-link" href="{{ path('admin') }}">espace membre</a>
-										<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
-										<a href=""></a>
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Bienvenue
+											{{ app.user.username }},
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+											<li>
+												<a class="nav-link" href="{{ path('profil') }}">espace membre</a>
+											</li>
+											<li>
+												<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+											</li>
+										</ul>
 									</div>
 								{% else %}
 									<li class="nav-item">
@@ -117,6 +71,7 @@
 			{% endblock %}
 		</header>
 
+		<main>
 
 		{% block body %}
 			<section class="sections home text-center">
@@ -144,7 +99,7 @@
 				</div>
 			</section>
 		{% endblock %}
-
+		</main>
 
 		<footer>
 			{% block formulaire %}
@@ -153,7 +108,7 @@
 						<h2>About Me</h2>
 						<div class="content">
 							<p class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae magni aperiam explicabo enim
-																                        voluptas possimus fuga voluptatum est modi exercitationem.
+																																                        voluptas possimus fuga voluptatum est modi exercitationem.
 							</p>
 							<div class="social">
 								<a href="#">
@@ -233,13 +188,5 @@
 				</center>
 			</div>
 		{% endblock %}
-	</footer>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-	</script>
-	<script src="{{ asset('js/script.js') }}"></script>
 	</body>
-</html>
+</html></footer><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><script src="{{ asset('js/script.js') }}"></script></body></html>
