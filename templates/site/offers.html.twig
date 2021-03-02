@@ -1,3 +1,4 @@
+
 {% extends 'parent.html.twig' %}
 
 {% block title %}Hello SiteController!
@@ -6,27 +7,26 @@
 
 {% block body %}
 
-	<h1 class="offer_title">
-		Nos Annonces
-	</h1>
 
-	<div class="card-group">
-		{% for offer in offers %}
-			<div class="card">
-				{% if offer.picture %}
-					<div><img src="{{ asset('uploads/' ~ offer.picture) }}" class="img-fluid"></div>
-				{% endif %}
-				<div class="card-body">
-
-					<h5>
-						<a href="{{ path('offer_show', {'id': offer.id}) }}" class="card-title">Annonce 1</a>
-					</h5>
-					<p class="card-text">Dolor duis excepteur consequat ut commodo sint Lorem reprehenderit. Id esse laboris enim sunt ad tempor. In elit ut ut mollit eiusmod. Eu eu anim ipsum Lorem commodo est non velit consequat dolor qui cillum. Reprehenderit et in incididunt laboris est esse fugiat esse esse culpa ea exercitation enim dolor. Amet aliqua ad duis laborum labore duis id culpa aute.</p>
-					<p class="card-text">
-						<small class="text-muted">Utilisateur 1</small>
-					</p>
+{% for offer in offers %}
+<section class="cards_body">
+	<div class="blog-post_img">
+			<img src="{{ asset('uploads/images/Logofinal2.png') }}" alt="Lorem1">
+		</div>
+			<div class="blog-post_info">
+				<div class="blog-post_date">
+					<span>User</span>
+					<span>Date</span>
 				</div>
+					<h1 class="blog-post_title">Offer Card 1</h1>
+					<p class="blog-post_text">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
+					</p>
+				<a href="{{ path('offer_show', {'id': offer.id}) }}" class="blog-post_cta">Show</a>
 			</div>
-		{% endfor %}
+		</div>
 	</div>
+</section>
+{% endfor %}
 {% endblock %}
+
