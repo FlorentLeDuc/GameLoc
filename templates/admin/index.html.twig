@@ -3,7 +3,7 @@
 
 {% block body %}
 <div class="container">
-    <h1>Bonjour, {{ controller_name }}! ✅</h1>
+    <h1>Bonjour, {{ app.user.username }}! ✅</h1>
     <p>Içi vous pouvez gérer tout les aspects du sites</p>
     <a class="btn btnadmin" href="{{ path('user_index') }}">Gère tes utilisateurs</a>
     <a class="btn btnadmin" href="{{ path('category_index') }}">Gère les catégories</a>
