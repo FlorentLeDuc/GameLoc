@@ -10,6 +10,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Validator\Constraints\Image;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class OfferType extends AbstractType
 {
@@ -18,7 +20,18 @@ class OfferType extends AbstractType
         $builder
             ->add('title')
             ->add('content')
-            ->add('picture')
+            ->add('picture', FileType::class,[
+                'label' => 'Choisissez une photo à uploader',
+                'multiple' => true,
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new Image([
+                        'maxSize' => '10240k',
+
+                    ])
+                ],
+            ])
             ->add('publication_date')
             ->add('selling_price')
             ->add('rent_price')
