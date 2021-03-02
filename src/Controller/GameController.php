@@ -5,19 +5,22 @@ namespace App\Controller;
 use App\Entity\Game;
 use App\Form\GameType;
 use App\Repository\GameRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/game')]
+#[Route('/game')]
 class GameController extends AbstractController
 {
     #[Route('/', name: 'game_index', methods: ['GET'])]
-    public function index(GameRepository $gameRepository): Response
+    public function index(GameRepository $gameRepository, CategoryRepository $categoryRepository): Response
     {
+        $category = $categoryRepository->findBy([], ["id" => "DESC"]);
         return $this->render('game/index.html.twig', [
             'games' => $gameRepository->findAll(),
+            'categoy' => $category,
         ]);
     }
 
@@ -79,4 +82,12 @@ class GameController extends AbstractController
 
         return $this->redirectToRoute('game_index');
     }
+    
+    #[Route('/category', name: 'category')]
+    public function category(): Response
+    {
+        return $this->render('site/category.html.twig', [
+            'controller_name' => 'SiteController',
+            ]);
+        }
 }
