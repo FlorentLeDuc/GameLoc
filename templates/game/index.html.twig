@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Title</th>
                 <th>Content</th>
+                <th>categorie</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,7 +21,7 @@
                 <td>{{ game.id }}</td>
                 <td>{{ game.title }}</td>
                 <td>{{ game.content }}</td>
-                <td>
+                <td>{{ game.category.title }}<td>
                     <a href="{{ path('game_show', {'id': game.id}) }}">show</a>
                     <a href="{{ path('game_edit', {'id': game.id}) }}">edit</a>
                 </td>
