@@ -70,12 +70,10 @@ class SiteController extends AbstractController
         ]);
     }
 
-    #[Route('/offer', name: 'offer')]
-    public function offer(OfferRepository $offerRepository): Response
+    #[Route('/offer{id}', name: 'offer', methods: ['GET'])]
+    public function offer(Offer $offer): Response
     {
-        $offer = $offerRepository->findBy([], [ "publication_date" => "DESC"]);
         return $this->render('site/offer.html.twig', [
-            'controller_name' => 'SiteController',
             'offer' => $offer,
         ]);
     }
