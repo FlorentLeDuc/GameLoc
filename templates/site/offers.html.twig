@@ -11,16 +11,16 @@
 {% for offer in offers %}
 <section class="cards_body">
 	<div class="blog-post_img">
-			<img src="{{ asset('uploads/images/Logofinal2.png') }}" alt="Lorem1">
+			<img src="{{ asset('uploads/images/' ~ offer.picture) }}" alt="Lorem1">
 		</div>
 			<div class="blog-post_info">
 				<div class="blog-post_date">
-					<span>User</span>
-					<span>Date</span>
+					<span>{{ offer.user.username }}</span>
+					<span>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</span>
 				</div>
-					<h1 class="blog-post_title">Offer Card 1</h1>
+					<h1 class="blog-post_title"></h1>
 					<p class="blog-post_text">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
+						{{ offer.content }}
 					</p>
 				<a href="{{ path('offer_show', {'id': offer.id}) }}" class="blog-post_cta">Show</a>
 			</div>
