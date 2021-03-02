@@ -1,0 +1,29 @@
+{% extends 'parent.html.twig' %}
+
+{% block title %}{{ offer.title }}
+{% endblock %}
+
+
+{% block body %}
+
+<section class="cards_body">
+	<div class="blog-post_img">
+			{# <img src="{{ asset('uploads/' ~ offer.picture) }}" alt="Lorem1"> #}
+		</div>
+			<div class="blog-post_info">
+				<div class="blog-post_date">
+					<span>{{ offer.user.username }}</span>
+					<span>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</span>
+				</div>
+					<h1 class="blog-post_title"></h1>
+					<p class="blog-post_text">
+						{{ offer.content }}
+					</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% if is_granted('ROLE_ADMIN') %}
+
+{% endblock %}

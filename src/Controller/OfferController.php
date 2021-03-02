@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
-#[Route('/offer')]
+#[Route('/admin/offer')]
 class OfferController extends AbstractController
 {
     #[Route('/', name: 'offer_index', methods: ['GET'])]
