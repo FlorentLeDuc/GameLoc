@@ -12,8 +12,7 @@
 		<div class="col-xs4">
 			<h1>Profil de {{ app.user.username }}</h1>
 		</div>
-		<div class="col-xs1">Email :</div>
-		<div class="col-xs3">{{ app.user.email }}</div>
+		<div class="col-xs1">Email :{{ app.user.email }}</div>
 		<div class="col-xs4">
             {# <a href="{{ path('users_profil_modifier') }}" class="btn blue">Modifier le profil</a>
             <a href="{{ path('users_pass_modifier')}}" class="btn blue">Modifier le mot de passe</a>
@@ -21,7 +20,7 @@
         </div>
 
 		<div class="col-xs4">
-			<h1>Annonces de {{ app.user.username }} ({{ app.user.offers|length }})</h1>
+			<h1>Mes Annonces ({{ app.user.offers|length }}) :</h1>
 		</div>
         {% for offer in app.user.offers %}
             <div class="col-xs1">Titre :</div>
