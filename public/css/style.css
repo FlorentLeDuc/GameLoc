@@ -161,9 +161,13 @@ header{
     margin: 5px;
 }
 
-
-
-
+.btnadmin{
+    background:  #aeae81d3;
+    color: #fff;
+    width: 150px;
+    text-align: center;
+    padding: 10px 0;
+}
 
 
 
