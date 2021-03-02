@@ -23,4 +23,7 @@
 		</div>
 	</div>
 </section>
+
+{% if is_granted('ROLE_ADMIN') %}
+
 {% endblock %}
