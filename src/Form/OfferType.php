@@ -22,7 +22,6 @@ class OfferType extends AbstractType
             ->add('content')
             ->add('picture', FileType::class,[
                 'label' => 'Choisissez une photo à uploader',
-                'multiple' => true,
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
