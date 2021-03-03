@@ -8,21 +8,30 @@
     {% endfor %}
 
     <section class="decalnav home">
-        <div class="blocform">
-            <h1>Register</h1>
+        <div class="overlay2">
+        <a href="{{ path('index') }}" class="overlay3"></a>
+            <div class="blocform">
+                <h1>Register</h1>
 
-            <div>
-                {{ form_start(registrationForm) }}
-                    {{ form_row(registrationForm.username, {label: 'Pseudo'}) }}
-                    {{ form_row(registrationForm.adress, {label: 'Adresse'}) }}
-                    {{ form_row(registrationForm.zipcode, {label: 'Code Postal'}) }}
-                    {{ form_row(registrationForm.email, {label: 'Email'}) }}
-                    {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
-                    {{ form_row(registrationForm.agreeTerms , {label: 'CGU'}) }}
+                <div>
+                    {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.username, {label: 'Pseudo'}) }}
+                        {{ form_row(registrationForm.adress, {label: 'Adresse'}) }}
+                        {{ form_row(registrationForm.zipcode, {label: 'Code Postal'}) }}
+                        {{ form_row(registrationForm.email, {label: 'Email'}) }}
+                        {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+                        {{ form_row(registrationForm.agreeTerms , {label: 'CGU'}) }}
 
-                    <button type="submit" class="btn">Register</button>
-                {{ form_end(registrationForm) }}
+                        <button type="submit" class="btn">Register</button>
+                    {{ form_end(registrationForm) }}
+                </div>
             </div>
         </div>
     </section>
+
+    {% block footer %}
+    {% endblock %}
+
+
+
 {% endblock %}
