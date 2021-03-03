@@ -161,7 +161,18 @@
 				<div class="right box">
 					<h2 id="contact">Contact us</h2>
 					<div class="content">
-						<form action="#">
+						{% for message in app.flashes('message') %}
+    					<div class="p-3 my-2 rounded-2 success">{{ message }}</div>
+						{% endfor %}
+						<div class="container">
+						{{ form_start(form) }}
+									{{ form_row(form.sujet) }}
+									{{ form_row(form.email) }}
+									{{ form_row(form.message) }}
+							<button class="btn btn-secondary btn-lg">Envoyer</button>
+						{{ form_end(form) }}
+						</div>
+						{# <form action="#">
 							<div class="email">
 								<div class="text">Email *</div>
 								<input type="email" name="user_email" required>
@@ -173,7 +184,7 @@
 							<div class="btn">
 								<button type="submit">Send</button>
 							</div>
-						</form>
+						</form> #}
 
 					</div>
 				</div>
