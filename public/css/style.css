@@ -142,9 +142,11 @@ header {
 .home .button {
     background: #aeae81d3;
     color: #fff;
-    width: 150px;
+    width: 11em;
+    font-size: 1.3em;
     text-align: center;
     padding: 10px 0;
+    margin: 1%;
 }
 /*****************************************************
 *                    MAIN                         *
