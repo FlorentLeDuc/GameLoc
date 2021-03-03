@@ -3,8 +3,9 @@
 {% block title %}Modification du profil de {{ app.user.username }}{% endblock %}
 
 {% block body %}
-<div class="container rounded bg-white mt-5 decalnav">
-    <div class="row">
+<div class="decalnav ">
+<div class="rounded container">
+    <div class="row ">
         <div class="col-md-4 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="{{ asset('uploads/images/Avatar.png') }}" width="90"><span class="font-weight-bold">{{ app.user.username }}</span><span class="text-black-50">{{ app.user.email }}</span></div>
         </div>
@@ -12,7 +13,7 @@
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                        <h6>Retour au profil</h6>
+                        <h6><a href="{{ path('profil') }}">Retour au profil</a></h6>
                     </div>
                     <h6 class="text-right">Modification du profil</h6>
                 </div>
@@ -24,9 +25,10 @@
                     <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value=""></div>
                     <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Code postal"></div>
                 </div>
-                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                <div class="mt-5 text-right"><button href="{{ path('profil') }}" class="btn profile-button" type="button">Save Profile</button></div>
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}

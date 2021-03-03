@@ -2,32 +2,54 @@
     background: #BA68C8
 } */
 
+
+.rounded-circle{
+    width: 45%;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+.form-control{
+/* background-color: #a6a867; */
+}
+
+.container{
+    margin-bottom: 105px; 
+    
+}
+
+
 .form-control:focus {
     box-shadow: none;
-    border-color: #BA68C8
+    border-color: #6e6e6e
 }
 
 .profile-button {
-    background: #aeae81d3;
+    background: #a6a867;
     box-shadow: none;
-    border: none
+    border: none;
+    color: white;
+    
 }
 
-.profile-button:hover {
+/* .profile-button:hover {
     background: #682773
-}
+} */
 
 .profile-button:focus {
-    background: #682773;
+    /* background: #682773; */
     box-shadow: none
 }
 
-.profile-button:active {
+/* .profile-button:active {
     background: #682773;
     box-shadow: none
-}
+} */
 
 .back:hover {
-    color: #682773;
+    color: #aeae81d3;
     cursor: pointer
 }
