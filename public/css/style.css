@@ -575,11 +575,16 @@ footer {
 .blog-post{
     width: 100%;
     max-width: 98rem;
-    padding: 5rem;
+    padding: 2.5rem;
     background-color: #aeae81;
     box-sizing: 0 1.4rem 8rem rgba(0,0,0,.2);
     display: flex;
     align-items: center;
+}
+
+:first-of-type.blog-post{
+    margin-top: 5rem;
+    border-radius: 0.8rem;
 }
 
 .blog-post_info{
