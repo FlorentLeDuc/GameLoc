@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
+
 /*****************************************************
 *                    BACKGROUND                        *
 *****************************************************/
@@ -28,8 +29,6 @@
 .home-content{
     background-color: #55545400;
     padding: 20px;
-    padding-left: 100px;
-    padding-right: 100px;
 }
 
 .title {
@@ -47,7 +46,7 @@
     -moz-background-clip: text;
     -webkit-background-clip: text;
     text-transform: uppercase;
-    font-size: 180px;
+    font-size: 11vw;
     line-height: .75;
 
 }
@@ -91,6 +90,12 @@
     cursor: pointer;
 }
 
+.row{
+    margin: 0;
+}
+
+
+
 
 
 /*****************************************************
@@ -101,7 +106,7 @@
 header {
     height: auto;
     padding: 10px 0;
-    position: fixed;
+    /* position:fixed; */
     width: 100%;
     z-index: 9;
 }
@@ -152,11 +157,21 @@ nav {
     height: 7vh;
 }
 
+header nav ul li{
+    justify-content: center;
+}
 
+header nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.sr-only{
+    color: white;
+}
 
 .nav-link {
     text-decoration: none;
-    color: white;
 }
 
 .nav-link a:hover {
@@ -167,6 +182,14 @@ nav {
     color: #a6a867;
     font-weight: bold;
 
+}
+
+.dropdown-menu{
+    position: absolute;
+    right: 0;
+    top: auto;
+    left: auto;
+    background-color: black;
 }
 
 .sticky {
@@ -180,9 +203,11 @@ nav {
     width: 100%;
 }
 
-.navbar-brand {
+
+.navbar-brand{
     padding: 0px;
 }
+
 
 .navbar-brand>img {
     padding: 15px;
@@ -207,6 +232,9 @@ nav {
     padding: 10px 0;
 }
 
+/* .navbar a{
+    width: 10px;
+} */
 
 /*****************************************************
 *                    BODY                         *
@@ -259,7 +287,7 @@ footer {
 }
 
 .box h2 {
-
+    
     font-size: 1.125rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -444,19 +472,35 @@ footer {
     header {
         width: 100vw;
     }
+    
+    .title{
+        font-size: 15vw;
+    }
+
+    .navbar-brand{
+        padding: 0;
+        justify-content: center;
+        width: 70%;
+    }
+    
+    
+    .navbar-brand>img {
+        padding: 15px;
+    }
+    
+
 
     .navbar{
         justify-content: space-around;
+        display: flex;
     }
 
-    #logo{
-        padding: 0;
-        justify-content: center;
-    }
     header nav .nav-link {
         display: block;
         text-align: center;
-        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
+        background-color: black;
     }
 
     a {
