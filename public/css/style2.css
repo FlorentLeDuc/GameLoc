@@ -374,3 +374,7 @@ ul.summary-list > li:last-child  {
 .activity-desk .album a:last-child{
     margin-right: 0px;
 }
+
+.decalnav{
+    padding-top: 75px;
+}
