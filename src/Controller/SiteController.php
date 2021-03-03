@@ -11,9 +11,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\OfferRepository;
-use App\Entity\User;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class SiteController extends AbstractController
 {
@@ -179,6 +180,85 @@ class SiteController extends AbstractController
     #[Route('/editprofil', name: 'editprofil')]
     public function editprofil(Request $request, MailerInterface $mailer): Response
     {
+        $form1 = $this->createForm(ContactType::class);
+
+        $contact = $form1->handleRequest($request);
+
+        if($form1->isSubmitted() && $form1->isValid()){
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('contact@gameloc.com')
+                ->subject('Contact depuis le site')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'sujet' => $contact->get('sujet')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            $mailer->send($email);
+
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+        }
+
+        return $this->render('site/editprofil.html.twig', [
+            'form1' => $form1->createView(),
+            'controller_name' => 'SiteController',
+        ]);
+    }
+
+    #[Route('/createoffer', name: 'createoffer')]
+    public function createoffer(Request $request, MailerInterface $mailer, SluggerInterface $slugger ): Response
+    {
+        $offer = new Offer();
+        $form = $this->createForm(OfferType::class, $offer);
+        $form->handleRequest($request);
+        
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+                        // code de gestion de upload image
+                        $imageFile = $form->get('picture')->getData();
+
+                        // this condition is needed because the 'image' field is not required
+                        // so the PDF file must be processed only when a file is uploaded
+                        if ($imageFile) {
+                            $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                            // this is needed to safely include the file name as part of the URL
+                            $safeFilename = $slugger->slug($originalFilename);
+                            $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
+            
+                            // Move the file to the directory where images are stored
+                            try {
+                                $imageFile->move(
+                                    $this->getParameter('images_directory'),    // dossier cible
+                                    $newFilename
+                                );
+                            } catch (FileException $e) {
+                                // ... handle exception if something happens during file upload
+                            }
+
+                            // supprimer l'image d'avant
+                            $dossierUpload = $this->getParameter('images_directory');
+        
+                            $fichierImage = "$dossierUpload/" . $offer->getPicture();
+                            if (is_file($fichierImage)) {
+                            unlink($fichierImage);
+                            }
+            
+                            // updates the 'imageFilename' property to store the PDF file name
+                            // instead of its contents
+                            $offer->setPicture($newFilename);
+                        }
+                        else {
+                            $offer->setPicture("");     // aucun fichier uploade
+                        }
+            
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($offer);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('offer_index');
+        }
 
         $form1 = $this->createForm(ContactType::class);
 
@@ -199,10 +279,10 @@ class SiteController extends AbstractController
 
             $this->addFlash('message', 'Votre e-mail a bien été envoyé');
         }
-        return $this->render('site/editprofil.html.twig', [
-            'form1' => $form1->createView(),
+        return $this->render('site/createoffer.html.twig', [
             'controller_name' => 'SiteController',
+            'Offer' => $form->createView(),
+            'form1' => $form1->createView()
         ]);
     }
-    
 }
