@@ -404,3 +404,17 @@ ul.summary-list > li:last-child  {
     background: rgba(0, 0, 0, 0.301);
 
 }
+
+/*****************************************************
+*            Inscription et connexion                *
+*****************************************************/
+
+.blocform{
+    padding: 20px;
+    width: 400px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+}
