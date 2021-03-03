@@ -16,9 +16,10 @@ class SiteController extends AbstractController
     public function index(OfferRepository $offerRepository): Response
     {
         $offers = $offerRepository->findBy([], [ 
-            "publication_date" => "DESC",],
+            "publication_date" => "DESC",
             5
-        );
+            ]
+            );
         return $this->render('site/index.html.twig', [
             'controller_name' => 'SiteController',
             'offers' => $offers,
