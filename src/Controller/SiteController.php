@@ -25,15 +25,15 @@ class SiteController extends AbstractController
             "publication_date" => "DESC",],
             5
             );
-        $form = $this->createForm(ContactType::class);
+        $form1 = $this->createForm(ContactType::class);
 
-        $contact = $form->handleRequest($request);
+        $contact = $form1->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if($form1->isSubmitted() && $form1->isValid()){
             $email = (new TemplatedEmail())
                 ->from($contact->get('email')->getData())
                 ->to('contact@gameloc.com')
-                ->subject('Contact depuis le site GameLoc')
+                ->subject('Contact depuis le site')
                 ->htmlTemplate('emails/contact.html.twig')
                 ->context([
                     'sujet' => $contact->get('sujet')->getData(),
@@ -47,56 +47,67 @@ class SiteController extends AbstractController
         return $this->render('site/index.html.twig', [
             'controller_name' => 'SiteController',
             'offers' => $offers,
-            'form' => $form->createView()
+            'form1' => $form1->createView()
         ]);
     }
 
-    #[Route('/user', name: 'user')]
-    public function user(): Response
-    {
-        return $this->render('site/user.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
-    
-    #[Route('/game', name: 'game')]
-    public function game(): Response
-    {
-        return $this->render('site/game.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
-    #[Route('/category', name: 'category')]
-    public function category(): Response
-    {
-        return $this->render('site/category.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
-
-    #[Route('/games', name: 'games')]
-    public function games(): Response
-    {
-        return $this->render('site/games.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
     #[Route('/profil', name: 'profil')]
-    public function profil(): Response
+    public function profil(Request $request, MailerInterface $mailer): Response
     {
+        
+        $form1 = $this->createForm(ContactType::class);
+
+        $contact = $form1->handleRequest($request);
+
+        if($form1->isSubmitted() && $form1->isValid()){
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('contact@gameloc.com')
+                ->subject('Contact depuis le site')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'sujet' => $contact->get('sujet')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            $mailer->send($email);
+
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+        }
         return $this->render('site/profil.html.twig', [
             'controller_name' => 'SiteController',
+            'form1' => $form1->createView()
         ]);
     }
 
     #[Route('/offers', name: 'offers')]
-    public function offers(OfferRepository $offerRepository): Response
+    public function offers(OfferRepository $offerRepository, Request $request, MailerInterface $mailer): Response
     {
 
+        $form1 = $this->createForm(ContactType::class);
+
+        $contact = $form1->handleRequest($request);
+
+        if($form1->isSubmitted() && $form1->isValid()){
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('contact@gameloc.com')
+                ->subject('Contact depuis le site')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'sujet' => $contact->get('sujet')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            $mailer->send($email);
+
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+        }
         $offers = $offerRepository->findBy([], [ "publication_date" => "DESC"]);
         return $this->render('site/offers.html.twig', [
             'controller_name' => 'SiteController',
             'offers' => $offers,
+            'form1' => $form1->createView()
         ]);
     }
 
@@ -123,9 +134,29 @@ class SiteController extends AbstractController
             $this->addFlash('message', 'Votre e-mail a bien été envoyé');
         }
 
+        $form1 = $this->createForm(ContactType::class);
+
+        $contact = $form1->handleRequest($request);
+
+        if($form1->isSubmitted() && $form1->isValid()){
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('contact@gameloc.com')
+                ->subject('Contact depuis le site')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'sujet' => $contact->get('sujet')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            $mailer->send($email);
+
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+        }
         return $this->render('site/offer.html.twig', [
             'offer' => $offer,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'form1' => $form1->createView()
         ]);
     }
 

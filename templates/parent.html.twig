@@ -165,12 +165,12 @@
     					<div class="p-3 my-2 rounded-2 success">{{ message }}</div>
 						{% endfor %}
 						<div class="container">
-						{{ form_start(form) }}
-									{{ form_row(form.sujet) }}
-									{{ form_row(form.email) }}
-									{{ form_row(form.message) }}
+						{{ form_start(form1) }}
+									{{ form_row(form1.sujet) }}
+									{{ form_row(form1.email) }}
+									{{ form_row(form1.message) }}
 							<button class="btn btn-secondary btn-lg">Envoyer</button>
-						{{ form_end(form) }}
+						{{ form_end(form1) }}
 						</div>
 						{# <form action="#">
 							<div class="email">
