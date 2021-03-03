@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Offer;
 use App\Form\OfferType;
 use App\Form\OfferContactType;
+use App\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,16 +17,37 @@ use Symfony\Component\Mailer\MailerInterface;
 
 class SiteController extends AbstractController
 {
-    #[Route('/', name: 'index')]
-    public function index(OfferRepository $offerRepository): Response
+    #[Route('/', name: 'index',  methods: ['GET', 'POST'])]
+    public function index(OfferRepository $offerRepository, Request $request, MailerInterface $mailer): Response
     {
+
         $offers = $offerRepository->findBy([], [ 
             "publication_date" => "DESC",],
             5
             );
+        $form = $this->createForm(ContactType::class);
+
+        $contact = $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('contact@gameloc.com')
+                ->subject('Contact depuis le site GameLoc')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'sujet' => $contact->get('sujet')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            $mailer->send($email);
+
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+        }
         return $this->render('site/index.html.twig', [
             'controller_name' => 'SiteController',
             'offers' => $offers,
+            'form' => $form->createView()
         ]);
     }
 

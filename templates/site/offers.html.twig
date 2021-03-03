@@ -5,25 +5,29 @@
 
 
 {% block body %}
-
+<section class="decalnav">
 	{% for offer in offers %}
 		<section class="cards_body">
 			<div class="blog-post">
 				<div class="blog-post_img">
 					<img src="{{ asset('uploads/' ~ offer.picture) }}" alt="Lorem1">
 				</div>
-				 <div class="blog-post_info"> 
+				<div class="blog-post_info"> 
 					<div class="blog-post_date">
 						<span>{{ offer.user.username }}</span>
 						<span>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</span>
 					</div> 
-					<h1 class="blog-post_title">{{ offer.title }}</h1>
-					 <p class="blog-post_text">
-						{{ offer.content }}
-					</p>
-					<a href="{{ path('offer', {'id': offer.id}) }}" class="blog-post_cta">En savoir plus</a> 
+						<h1 class="blog-post_title">{{ offer.title }}</h1>
+						 <p class="blog-post_text">
+						{{ offer.category.title }}
+						</p>
+						<a href="{{ path('offer', {'id': offer.id}) }}" class="blog-post_cta">En savoir plus</a> 
+					<div class="blog-post_price">
+					<p>PRIX<i class="fas fa-euro-sign"></i></p>
+					</div>
 				</div> 
 			</div>
 		</section>
 	{% endfor %}
+</section>
 {% endblock %}
