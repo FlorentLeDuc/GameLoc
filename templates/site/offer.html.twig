@@ -26,32 +26,35 @@
 
 <h2>Cette annonce t'interresse ? C'est ici pour contacter le vendeur/loueur</h2>
 {% if is_granted('ROLE_USER') %}
-<form method="POST">
-    <div class="container">
-        <div class="mb-3">
-            <label for="name" class="form-label">Nom*</label>
-            <input type="text" class="form-control" id="name" placeholder="Nom" name="name" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email*</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required>
-        </div>
-        <div class="mb-3">
-            <label for="sujet" class="form-label">Objet*</label>
-            <input type="text" class="form-control" id="sujet" placeholder="{{ offer.title }}" name="sujet" required>
-        </div>
-        <div class="mb-3">
-            <label for="text" class="form-label">Message*</label>
-            <textarea class="form-control" id="text" rows="5" name="text" required></textarea>
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-secondary btn-lg">Envoyer</button>
-        </div>
-    </div>
- </form>
+ {% for message in app.flashes('message') %}
+    <div class="p-3 my-2 rounded-2 success">{{ message }}</div>
+{% endfor %}
+<div class="container">
+ {{ form_start(form) }}
+            {{ form_widget(form.title) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.message) }}
+ <button class="btn btn-secondary btn-lg">Envoyer</button>
+ {{ form_end(form) }}
+</div>
+
 {% else %}
 <a class="btn btnadmin" href="{{ path('app_register') }}">CREER UN COMPTE</a>
 <a class="btn btnadmin" href="{{ path('app_login') }}">CONNEXION</a>
 {% endif %}
 
+{% endblock %}
+
+{% block javascripts %}
+	<script>
+		window.onload = () => {
+			document.querySelector("#offer_contact_title").value = "{{ offer_contact.title|raw }}";
+			// On met un écouteur d'évènements sur tous les boutons répondre
+			document.querySelectorAll("[data-reply]").forEach(element => {
+				element.addEventListener("click", function(){
+					document.querySelector("#comments_parentid").value = this.dataset.id;
+				});
+			});
+		}
+	</script>
 {% endblock %}
