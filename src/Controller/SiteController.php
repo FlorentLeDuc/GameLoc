@@ -15,7 +15,10 @@ class SiteController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(OfferRepository $offerRepository): Response
     {
-        $offers = $offerRepository->findBy([], [ "publication_date" => "DESC"]);
+        $offers = $offerRepository->findBy([], [ 
+            "publication_date" => "DESC",],
+            5
+        );
         return $this->render('site/index.html.twig', [
             'controller_name' => 'SiteController',
             'offers' => $offers,
