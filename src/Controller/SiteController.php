@@ -175,4 +175,34 @@ class SiteController extends AbstractController
             'controller_name' => 'SiteController',
         ]);
     }
+
+    #[Route('/editprofil', name: 'editprofil')]
+    public function editprofil(Request $request, MailerInterface $mailer): Response
+    {
+
+        $form1 = $this->createForm(ContactType::class);
+
+        $contact = $form1->handleRequest($request);
+
+        if($form1->isSubmitted() && $form1->isValid()){
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('contact@gameloc.com')
+                ->subject('Contact depuis le site')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'sujet' => $contact->get('sujet')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            $mailer->send($email);
+
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+        }
+        return $this->render('site/editprofil.html.twig', [
+            'form1' => $form1->createView(),
+            'controller_name' => 'SiteController',
+        ]);
+    }
+    
 }
