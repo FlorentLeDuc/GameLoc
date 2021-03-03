@@ -8,7 +8,7 @@
 
 <section class="cards_body">
 	<div class="blog-post_img">
-			{# <img src="{{ asset('uploads/' ~ offer.picture) }}" alt="Lorem1"> #}
+			<img src="{{ asset('uploads/' ~ offer.picture) }}" alt="Lorem1">
 		</div>
 			<div class="blog-post_info">
 				<div class="blog-post_date">
@@ -24,8 +24,34 @@
 	</div>
 </section>
 
+<h2>Cette annonce t'interresse ? C'est ici pour contacter le vendeur/loueur</h2>
 {% if is_granted('ROLE_USER') %}
-
+<form method="POST">
+    <div class="container">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nom*</label>
+            <input type="text" class="form-control" id="name" placeholder="Nom" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email*</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="sujet" class="form-label">Objet*</label>
+            <input type="text" class="form-control" id="sujet" placeholder="{{ offer.title }}" name="sujet" required>
+        </div>
+        <div class="mb-3">
+            <label for="text" class="form-label">Message*</label>
+            <textarea class="form-control" id="text" rows="5" name="text" required></textarea>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-secondary btn-lg">Envoyer</button>
+        </div>
+    </div>
+ </form>
+{% else %}
+<a class="btn btnadmin" href="{{ path('app_register') }}">CREER UN COMPTE</a>
+<a class="btn btnadmin" href="{{ path('app_login') }}">CONNEXION</a>
 {% endif %}
 
 {% endblock %}
