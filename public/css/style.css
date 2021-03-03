@@ -43,8 +43,9 @@
 	letter-spacing: 1px;
     background-size: cover;
     color: transparent;
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
+    /* -moz-background-clip: text;
+    -webkit-background-clip: text; */
+    background-clip: text;
     text-transform: uppercase;
     font-size: 11vw;
     line-height: .75;
