@@ -3,9 +3,9 @@
 {% block title %}Hello SiteController!
 {% endblock %}
 
-
 {% block body %}
 <section class="decalnav">
+<a class= "btn btnadmin" href="{{ path('createoffer') }}">Créez Annonce</a>
 	{% for offer in offers %}
 		<section class="cards_body">
 			<div class="blog-post">
