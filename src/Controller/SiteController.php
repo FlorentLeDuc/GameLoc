@@ -15,6 +15,9 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use App\Form\EditProfilType;
+use App\Entity\User;
+
 
 class SiteController extends AbstractController
 {
@@ -156,7 +159,7 @@ class SiteController extends AbstractController
         }
         return $this->render('site/offer.html.twig', [
             'offer' => $offer,
-            'form' => $form->createView(),
+            'form'  => $form->createView(),
             'form1' => $form1->createView()
         ]);
     }
@@ -178,10 +181,10 @@ class SiteController extends AbstractController
     }
 
     #[Route('/editprofil', name: 'editprofil')]
-    public function editprofil(Request $request, MailerInterface $mailer): Response
+    public function editprofil(Request $request, MailerInterface $mailer, EditProfilType $editprofil): Response
     {
+        
         $form1 = $this->createForm(ContactType::class);
-
         $contact = $form1->handleRequest($request);
 
         if($form1->isSubmitted() && $form1->isValid()){
@@ -200,8 +203,19 @@ class SiteController extends AbstractController
             $this->addFlash('message', 'Votre e-mail a bien été envoyé');
         }
 
+        $user = $this->getUser();
+        $form = $this->createForm(EditProfilType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('profil');
+        }
+
         return $this->render('site/editprofil.html.twig', [
             'form1' => $form1->createView(),
+            'form' => $form->createView(),
             'controller_name' => 'SiteController',
         ]);
     }
