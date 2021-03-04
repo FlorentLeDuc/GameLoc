@@ -16,7 +16,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/user', name: 'user')]
+    #[Route('/user', name: 'user')]
     public function user(): Response
     {
         return $this->render('user/index.html.twig', [
@@ -24,7 +24,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/category', name: 'category')]
+    #[Route('/category', name: 'category')]
     public function category(): Response
     {
         return $this->render('category/index.html.twig', [
@@ -32,7 +32,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/offer', name: 'offer')]
+    #[Route('/offer', name: 'offer')]
     public function offer(): Response
     {
         return $this->render('offer/index.html.twig', [
