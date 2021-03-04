@@ -262,6 +262,7 @@
     .cards_body{
         margin-top: 5rem;
         display: block;
+
     }
 
     .blog-post_text{
@@ -290,6 +291,9 @@
     }
     .bbtn{
         margin-left: 0px;
+    }
+    .pad_offers{
+        padding-bottom: 5rem;
     }
 }
 
