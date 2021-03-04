@@ -12,7 +12,7 @@
                 {{ form_row(Offer.selling_price, {label: 'Prix vendu'}) }}
                 {{ form_row(Offer.rent_price, {label: 'Prix loué'}) }}
                 {{ form_row(Offer.statement, {label: 'Etat du produit'}) }}
-                <button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sélection la category</button>
+                {{ form_row(Offer.subcat, {label: 'subcat'}) }}
                 {{ form_row(Offer.category, {label: 'Category'}) }}
                 <button type="submit" class="btn">Register</button>
         </div>
