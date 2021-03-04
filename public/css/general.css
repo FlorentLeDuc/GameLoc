@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+/*****************************************************
+*                        ALL                         *
+*****************************************************/
+
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        color: #797979;
+        background: #f1f2f7;
+        font-family: 'Open Sans', sans-serif;
+        padding: 0px !important;
+        margin: 0px !important;
+        font-size: 13px;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        min-height: 100vh;
+    }
+
+    .home {
+        height: 100vh;
+        background-image: url('../uploads/images/pexels-cottonbro-4842488.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-attachment: fixed;
+    }
+
+    .main_offer{
+        background-color:#2e2e2e ;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.600);
+    }
+
+/*****************************************************
+*                     ALL END                       *
+*****************************************************/
+
+
+
+
+
+/*****************************************************
+*                        NAV                         *
+*****************************************************/
+
+    header {
+        height: auto;
+        padding: 10px 0;
+        position:fixed;
+        width: 100%;
+        z-index: 9;
+    }
+
+    nav {
+        justify-content: center;
+        height: 7vh;
+    }
+    
+    header nav ul li{
+        justify-content: center;
+    }
+    
+    header nav ul li a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    .sr-only{
+        color: white;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+    }
+    
+    .nav-link a:hover {
+        justify-content: space-between;
+        color: #a6a867;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #a6a867;
+        font-weight: bold;
+    
+    }
+    
+    .dropdown-menu{
+        position: absolute;
+        right: 0;
+        top: auto;
+        left: auto;
+        background-color: black;
+    }
+    
+    .sticky {
+        background: rgba(0, 0, 0, 0.664);
+        /* background: rgba(174, 174, 129, 0.842); */
+        color: rgba(0, 0, 0, 0.664);
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    
+
+    .decalnav {
+        padding-top: 75px;
+    }        
+/*****************************************************
+*                      NAV END                       *
+*****************************************************/
+
+
+
+
+
+/*****************************************************
+*                    FOOTER                          *
+*****************************************************/
+
+    footer {
+        position: static;
+        bottom: 0px;
+        width: 100%;
+        background-color: rgba(17, 17, 17, 0.76);
+    }
+
+    .main-content {
+        display: flex;
+    }
+
+    .main-content .box {
+        flex-basis: 50%;
+        padding: 30px 100px;
+        padding-bottom: 10px;
+        
+    }
+
+    .box h2 {
+        
+        font-size: 1.125rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .box .content {
+        margin: 1px 0 0 0;
+        position: relative;
+    }
+
+    .box .content:before {
+        position: absolute;
+        content: '';
+        top: -10px;
+        height: 2px;
+        width: 100%;
+        background: #1a1a1a;
+    }
+
+    .box .content:after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 15%;
+        /* background: #f12020; */
+
+    }
+
+    .left .content p {
+        text-align: justify;
+    }
+
+
+    .left .content .social {
+        margin: 20px 0 0 0;
+    }
+
+    .left .content .social a {
+        padding: 0 2px;
+        text-decoration: none;
+    }
+
+    .left .content-text {
+        color: #aeae81;
+    }
+
+    .left .content .social a span {
+        height: 40px;
+        width: 40px;
+        background: #1a1a1a#aeae81;
+        line-height: 40px;
+        text-align: center;
+        font-size: 18px;
+        border-radius: 5px;
+        transition: 0.3s;
+        
+    }
+
+    .left .content .social a span:hover {
+        background: #aeae81;
+        color: black;
+
+    }
+
+    .center .content .fas {
+        font-size: 1.4375rem;
+        background: #1a1a1a#aeae81;
+        height: 45px;
+        width: 45px;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 50%;
+        transition: 0.3s;
+        cursor: pointer;
+        
+
+    }
+
+    .center .content .fas:hover {
+        background: #aeae81;
+        
+    }
+
+    .center .content .text {
+        font-size: 1.0625rem;
+        font-weight: 500;
+        padding-left: 10px;
+        color: #aeae81;
+        
+
+    }
+
+    .center .content .phone {
+        margin: 10px 0;
+        text-decoration: none;
+        
+
+    }
+
+    .right form .text {
+        font-size: 1.0625rem;
+        margin-bottom: 2px;
+        color: #aeae81;
+
+    }
+
+    .right form .msg {
+        margin-top: 10px;
+    }
+
+    .right form input,
+    .right form textarea {
+        width: 100%;
+        font-size: 1.0625rem;
+        background: #151515;
+        padding-left: 10px;
+        border: 1px solid #222222;
+
+    }
+
+    .right form input:focus,
+    .right form textarea:focus {
+        outline-color: #3498db;
+    }
+
+    .right form input {
+        height: 35px;
+    }
+
+    .right form .btn {
+        margin-top: 10px;
+    }
+
+    .right form .btn button {
+        height: 50px;
+        width: 100px;
+        border: none;
+        outline: none;
+        background: #aeae81;
+        font-size: 1.0625rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3;
+    }
+
+    .right form .btn button:hover {
+        background: rgba(126, 125, 125, 0.452);
+
+    }
+
+    .bottom center {
+        padding: 5px;
+        font-size: 0.9375rem;
+        background: #151515
+    }
+
+    .bottom center span {
+        color: #aeae81;
+
+    }
+
+    .bottom center a {
+        color: #7cb62f;
+        text-decoration: none;
+    }
+
+    .bottom center a:hover {
+        text-decoration: underline;
+    }
+
+/*****************************************************
+*                    FOOTER END                      *
+*****************************************************/
+
+
+
+
+
+
+
+
+
+
+
+/*****************************************************
+*                    PROFIL                          *
+*****************************************************/
+        .row{
+            margin: 0;
+        }

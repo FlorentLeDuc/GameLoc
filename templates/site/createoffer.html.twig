@@ -6,17 +6,15 @@
     <div class="overlay2">
         <h1>Créez votre annonce</h1>
         <div class="container">
-             {# {{ form_start(Offer) }} #}
                 {{ form_row(Offer.title, {label: 'Le titre de votre annonce'}) }}
+                {{ form_row(Offer.content, {label: 'Description'}) }}
                 {{ form_row(Offer.picture, {label: 'une photo'}) }}
                 {{ form_row(Offer.selling_price, {label: 'Prix vendu'}) }}
                 {{ form_row(Offer.rent_price, {label: 'Prix loué'}) }}
-                {# {{ form_row(Offer.category.id.title , {label: 'categorie'}) }}
-                {{ form_row(Offer.game.id.title , {label: 'game'}) }} #}
-
-
+                {{ form_row(Offer.statement, {label: 'Etat du produit'}) }}
+                <button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sélection la category</button>
+                {{ form_row(Offer.category, {label: 'Category'}) }}
                 <button type="submit" class="btn">Register</button>
-            {# {{ form_end(Offer) }} #}
         </div>
     </div>
 </section>
