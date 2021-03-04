@@ -105,17 +105,14 @@
         border-radius: .8rem;
         text-decoration: none;
         transform: translateX(19rem);
-
+        position: absolute;
+        top: 70%;
+        left: 40%;
     }
 
     .blog-post_cta:hover{
         background-image: linear-gradient(to right, #aeae81 0%, #151515 100%);
         color: #fff;
-    }
-
-    .blog-post_price{
-        display: flex;
-        justify-content: end;
     }
 
     .bbtn{
@@ -275,6 +272,7 @@
     }
     .blog-post_date span{
         font-size: 0.6rem;
+        margin: 0;
     }
 
     .blog-post_info{
@@ -288,7 +286,8 @@
         padding: 0.25rem 0.5rem;
     }
     .blog-post_price{
-        transform: translateX(-20rem);
+        font-size: 0.7rem ;
+        margin-bottom: 0rem;
     }
     .bbtn{
         margin-left: 0px;
@@ -322,6 +321,7 @@
     }
     .blog-post_date span{
         font-size: 0.6rem;
+        margin: 0;
     }
 
     .blog-post_info{
@@ -343,7 +343,8 @@
     }
 
     .blog-post_price{
-        transform: translateX(-20rem);
+        font-size: 0.7rem ;
+        margin-bottom: 0rem;
     }
 }
 
@@ -380,6 +381,7 @@
     }
     .blog-post_date span{
         font-size: 0.6rem;
+        margin: 0;
     }
     header nav .nav-link { 
         
@@ -399,7 +401,8 @@
     }
 
     .blog-post_price{
-        transform: translateX(-20rem);
+        font-size: 0.7rem ;
+        margin-bottom: 0rem;
     }
 }
 
