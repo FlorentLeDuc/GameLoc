@@ -5,8 +5,8 @@
 <section class="decalnav home">
     <div class="overlay2">
         <h1>Créez votre annonce</h1>
-        <div>
-             {{ form_start(Offer) }}
+        <div class="container">
+             {# {{ form_start(Offer) }} #}
                 {{ form_row(Offer.title, {label: 'Le titre de votre annonce'}) }}
                 {{ form_row(Offer.picture, {label: 'une photo'}) }}
                 {{ form_row(Offer.selling_price, {label: 'Prix vendu'}) }}
@@ -16,7 +16,7 @@
 
 
                 <button type="submit" class="btn">Register</button>
-            {{ form_end(Offer) }}
+            {# {{ form_end(Offer) }} #}
         </div>
     </div>
 </section>
