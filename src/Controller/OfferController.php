@@ -36,6 +36,7 @@ class OfferController extends AbstractController
                         // code de gestion de upload image
                         $imageFile = $form->get('picture')->getData();
                         $offer->setPublicationDate(new \DateTime());
+                        $offer->setUser();
                         // this condition is needed because the 'image' field is not required
                         // so the PDF file must be processed only when a file is uploaded
                         if ($imageFile) {

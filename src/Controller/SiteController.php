@@ -230,48 +230,50 @@ class SiteController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-                        // code de gestion de upload image
-                        $imageFile = $form->get('picture')->getData();
+            // code de gestion de upload image
+            $imageFile = $form->get('picture')->getData();
+            $offer->setPublicationDate(new \DateTime());
+            $userConnecte = $this->getUser();
+            $offer->setUser($userConnecte);
+            // this condition is needed because the 'image' field is not required
+            // so the PDF file must be processed only when a file is uploaded
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
 
-                        // this condition is needed because the 'image' field is not required
-                        // so the PDF file must be processed only when a file is uploaded
-                        if ($imageFile) {
-                            $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
-                            // this is needed to safely include the file name as part of the URL
-                            $safeFilename = $slugger->slug($originalFilename);
-                            $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
-            
-                            // Move the file to the directory where images are stored
-                            try {
-                                $imageFile->move(
-                                    $this->getParameter('images_directory'),    // dossier cible
-                                    $newFilename
-                                );
-                            } catch (FileException $e) {
-                                // ... handle exception if something happens during file upload
-                            }
+                // Move the file to the directory where images are stored
+                try {
+                    $imageFile->move(
+                        $this->getParameter('images_directory'),    // dossier cible
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
 
-                            // supprimer l'image d'avant
-                            $dossierUpload = $this->getParameter('images_directory');
-        
-                            $fichierImage = "$dossierUpload/" . $offer->getPicture();
-                            if (is_file($fichierImage)) {
-                            unlink($fichierImage);
-                            }
-            
-                            // updates the 'imageFilename' property to store the PDF file name
-                            // instead of its contents
-                            $offer->setPicture($newFilename);
-                        }
-                        else {
-                            $offer->setPicture("");     // aucun fichier uploade
-                        }
+                // supprimer l'image d'avant
+                $dossierUpload = $this->getParameter('images_directory');
+
+                $fichierImage = "$dossierUpload/" . $offer->getPicture();
+                if (is_file($fichierImage)) {
+                unlink($fichierImage);
+                }
+
+                // updates the 'imageFilename' property to store the PDF file name
+                // instead of its contents
+                $offer->setPicture($newFilename);
+            }
+            else {
+                $offer->setPicture("");     // aucun fichier uploade
+            }
             
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($offer);
             $entityManager->flush();
 
-            return $this->redirectToRoute('offer_index');
+            return $this->redirectToRoute('offers');
         }
 
         $form1 = $this->createForm(ContactType::class);

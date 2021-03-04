@@ -38,17 +38,17 @@ class OfferType extends AbstractType
             ->add('selling_price')
             ->add('rent_price')
             ->add('statement')
-            ->add('user', EntityType::class, [
-                // looks for choices from this entity
-                'class' => User::class,
+            // ->add('user', EntityType::class, [
+            //     // looks for choices from this entity
+            //     'class' => User::class,
             
-                // uses the User.username property as the visible option string
-                'choice_label' => 'username',
+            //     // uses the User.username property as the visible option string
+            //     'choice_label' => 'username',
                     
-                    // used to render a select box, check boxes or radios
-                    'multiple' => false,
-                    'expanded' => true,
-                    ])
+            //         // used to render a select box, check boxes or radios
+            //         'multiple' => false,
+            //         'expanded' => true,
+            //         ])
             
             ->add('game', EntityType::class, [
                 // looks for choices from this entity
@@ -59,7 +59,7 @@ class OfferType extends AbstractType
                     
                     // used to render a select box, check boxes or radios
                     'multiple' => false,
-                    'expanded' => true,
+                    'expanded' => false,
                     ])
             
             ->add('subcat', EntityType::class, [
@@ -77,7 +77,7 @@ class OfferType extends AbstractType
             
                 // used to render a select box, check boxes or radios
                 'multiple' => false,
-                'expanded' => true,
+                'expanded' => false,
                 
                     ])
             
