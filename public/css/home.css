@@ -96,8 +96,17 @@
 .about{
     width: 80vw;
     margin: auto;
+    
 }
 
+.etape{
+    width: 50vw;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
 
 
 
