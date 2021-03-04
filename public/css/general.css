@@ -296,12 +296,6 @@ header {
 *                    FOOTER                          *
 *****************************************************/
 
-
-
-/* .decalfoot{
-    margin-bottom: 0;
-} */
-
 footer {
     position: static;
     bottom: 0px;
