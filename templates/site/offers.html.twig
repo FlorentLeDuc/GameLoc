@@ -4,8 +4,8 @@
 {% endblock %}
 
 {% block body %}
-<section class="decalnav pad_offers">
-<a class= "btn btnadmin bbtn" href="{{ path('createoffer') }}">Créer une annonce</a>
+<section class="decalnav pad_offers"><a class= "btn btnadmin bbtn" href="{{
+ path('createoffer') }}">Créer une annonce</a>
 	{% for offer in offers %}
 		<section class="cards_body">
 			<div class="blog-post">
@@ -21,7 +21,6 @@
 					<p class=" blog-post_price">PRIX<i class="fas fa-euro-sign"></i></p>
 					<p class="blog-post_text">{{ offer.category.title }}</p>
 					<a href="{{ path('offer', {'id': offer.id}) }}" class="blog-post_cta">En savoir plus</a> 
-
 				</div> 
 			</div>
 		</section>
