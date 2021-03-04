@@ -418,6 +418,66 @@
 /********************   INSCRIPTION/CONNEXION END  **********************/
 
 
+/********************   EDIT  **********************/
+
+/* body {
+    background: #BA68C8
+} */
+
+
+.rounded-circle{
+    width: 45%;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+.form-control{
+/* background-color: #a6a867; */
+}
+
+.container{
+    padding-bottom: 105px; 
+    
+}
+
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #6e6e6e
+}
+
+.profile-button {
+    background: #a6a867;
+    box-shadow: none;
+    border: none;
+    color: white;
+    
+}
+
+/* .profile-button:hover {
+    background: #682773
+} */
+
+.profile-button:focus {
+    /* background: #682773; */
+    box-shadow: none
+}
+
+/* .profile-button:active {
+    background: #682773;
+    box-shadow: none
+} */
+
+.back:hover {
+    color: #aeae81d3;
+    cursor: pointer
+}
+
+/********************   EDIT END  **********************/
+
 
 
 /*****************************************************
