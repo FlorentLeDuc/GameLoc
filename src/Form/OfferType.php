@@ -34,7 +34,7 @@ class OfferType extends AbstractType
                     ])
                 ],
             ])
-            ->add('publication_date')
+            // ->add('publication_date')
             ->add('selling_price')
             ->add('rent_price')
             ->add('statement')
