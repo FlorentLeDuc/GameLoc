@@ -11,6 +11,15 @@
     .panel-footer .btn{
         background: #e3dc95;
     }
+    
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        flex-direction: column;
+      }
 
     .profile-nav .user-heading {
         background: #a6a86773;
@@ -383,6 +392,11 @@
     .activity-desk .album a:last-child {
         margin-right: 0px;
     }
+
+
+    .profilfont{
+        padding-bottom: 105px;
+    }
 /********************   VIEW END  **********************/
 
 
@@ -415,6 +429,8 @@
         right: 0;
         background: rgba(0, 0, 0, 0);
     }
+
+
 /********************   INSCRIPTION/CONNEXION END  **********************/
 
 
@@ -434,11 +450,6 @@ a{
     text-decoration: none;
 }
 
-
-.container{
-    padding-bottom: 105px; 
-    
-}
 
 
 .form-control:focus {
