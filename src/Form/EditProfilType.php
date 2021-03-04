@@ -7,6 +7,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
+
+
 class EditProfilType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -14,7 +17,6 @@ class EditProfilType extends AbstractType
         $builder
             ->add('username')
             ->add('email')
-            ->add('password')
             ->add('adress')
             ->add('zipcode')
         ;
