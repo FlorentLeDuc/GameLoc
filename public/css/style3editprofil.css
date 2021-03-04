@@ -11,9 +11,8 @@
         width: 100%;
         display: flex;
         /* height: 100vh; */
-        align-items: center;
+        /* align-items: center; */
         justify-content: center;
-        flex-direction: column;
         background-color: #2e2e2e;
         padding: 0 1.5rem;
     }
@@ -22,7 +21,7 @@
         width: 50%;
         height: 20vh;
         max-width: 98rem;
-        padding: 2.5rem;
+        /* padding: 2.5rem; */
         background-color: #aeae81;
         display: flex;
         box-sizing: 0 1.4rem 8rem rgba(0,0,0,.2);   
@@ -116,6 +115,10 @@
     .blog-post_price{
         display: flex;
         justify-content: end;
+    }
+
+    .bbtn{
+        margin-left: 1600px;
     }
 /******************   VIEW END   *********************/
 
@@ -233,86 +236,165 @@
     .main-content .box {
         margin: 5px 0;
     }
+
 }
 
 @media screen and (max-width: 1068px) {
     .blog-post{
         max-width: 80rem;
-        border-radius: 0.8rem;
+        /* border-radius: 0.8rem; */
+        /* margin-bottom: 50rem; */
+    }
+    :first-of-type.blog-post{
+        margin-top: none;
     }
 
     .blog-post_img{
-        min-width: 30rem;
-        max-width: 30rem;
-        margin-top: 20rem;
+        min-width: 100%;
+        height: auto;
+        /* margin-top: 20rem; */
+        transform: translateX(0rem);
+    }
+    .blog-post_img img{
+        height: 160px;
     }
 
     .cards_body{
-        margin-bottom: 50rem;
+        margin-top: 5rem;
+        display: block;
     }
 
     .blog-post_text{
 
-        font-size: 1.1rem;
+        font-size: 0.5rem;
     }
     .blog-post_title{
-        font-size: 1.5rem;
+        font-size: 0.7rem;
     }
     .blog-post_date span{
-        font-size: 1.3rem;
+        font-size: 0.6rem;
+    }
+
+    .blog-post_info{
+        transform: translateX(0rem);
+        width: 20vh;
+        height: 15vh;
+    }
+    .blog-post_cta{
+        transform: translateX(0rem);
+        font-size: 0.5rem;
+        padding: 0.25rem 0.5rem;
+    }
+    .blog-post_price{
+        transform: translateX(-20rem);
+    }
+    .bbtn{
+        margin-left: 0px;
     }
 }
 
 @media screen and (max-width: 868px) {
     .blog-post{
         max-width: 70rem;
-        border-radius: 0.8rem;
+        /* border-radius: 0.8rem; */
+        /* margin-bottom: 50rem; */
     }
+
+    :first-of-type.blog-post{
+        margin-top: none;
+    }
+
     .cards_body{
-        margin-bottom: 5rem;
+        margin-top: 5rem;
+        display: block;
     }
     .blog-post_text{
 
-        font-size: 1.1rem;
+        font-size: 0.5rem;
     }
     .blog-post_title{
-        font-size: 1.5rem;
+        font-size: 0.7rem;
     }
     .blog-post_date span{
-        font-size: 1.3rem;
+        font-size: 0.6rem;
+    }
+
+    .blog-post_info{
+        transform: translateX(0rem);
+        width: 20vh;
+        height: 15vh;
+    }
+
+    .blog-post_img{
+        transform: translateX(0rem);
+        min-width: 100%;
+        height: auto;
+    }
+
+    .blog-post_cta{
+        transform: translateX(0rem);
+        font-size: 0.5rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .blog-post_price{
+        transform: translateX(-20rem);
     }
 }
 
 @media screen and (max-width: 768px) {
     .blog-post{
-        padding: 2.5rem;
-        flex-direction: column;
-        border-radius: 0.8rem;
+        /* padding: 2.5rem; */
+        /* flex-direction: column; */
+        /* border-radius: 0.8rem; */
+        /* margin-bottom: 50rem; */
     }
 
     .blog-post_img{
         min-width: 100%;
-        transform: translate(0, -8rem);
-        margin-top: 10rem;
         height: auto;
+        /* transform: translate(0, -8rem); */
+        /* margin-top: 10rem; */
+        transform: translateX(0rem);
+    }
+
+    :first-of-type.blog-post{
+        margin-top: none;
     }
 
     .cards_body{
-        margin-bottom: 5rem;
+        margin-top: 5rem;
+        display: block;
     }
     .blog-post_text{
 
-        font-size: 1.1rem;
+        font-size: 0.5rem;
     }
     .blog-post_title{
-        font-size: 1.5rem;
+        font-size: 0.7rem;
     }
     .blog-post_date span{
-        font-size: 1.3rem;
+        font-size: 0.6rem;
     }
     header nav .nav-link { 
         
         margin-top: 4%;
+    }
+
+    .blog-post_info{
+        transform: translateX(0rem);
+        width: 20vh;
+        height: 15vh;
+    }
+
+    .blog-post_cta{
+        transform: translateX(0rem);
+        font-size: 0.5rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .blog-post_price{
+        transform: translateX(-20rem);
     }
 }
 
