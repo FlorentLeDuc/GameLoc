@@ -127,25 +127,6 @@
             width: 100%;
         }
         
-        
-        
-        #navadmin {
-            background-image: none;
-            position: relative;
-            background-color: #2e2e2e;
-        }
-        
-        .navadmin {
-            margin: 5px;
-        }
-        
-        .btnadmin{
-            background: #aeae81d3;
-            color: #fff;
-            width: 150px;
-            text-align: center;
-            padding: 10px 0;
-        }
     
         .decalnav {
             padding-top: 75px;
