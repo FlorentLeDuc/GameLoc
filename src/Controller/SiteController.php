@@ -220,7 +220,7 @@ class SiteController extends AbstractController
         ]);
     }
 
-    #[Route('/createoffer', name: 'createoffer', methods: ['GET', 'POST'])]
+    #[Route('/user/createoffer', name: 'createoffer', methods: ['GET', 'POST'])]
     public function createoffer(Request $request, MailerInterface $mailer, SluggerInterface $slugger ): Response
     {
         $offer = new Offer();
