@@ -56,9 +56,13 @@ class SiteController extends AbstractController
     }
 
     #[Route('/profil', name: 'profil')]
-    public function profil(Request $request, MailerInterface $mailer): Response
+    public function profil(Request $request, MailerInterface $mailer, OfferRepository $offerRepository, User $user): Response
     {
-        
+        $userconnecte = $this->getUser(User::class, $user);
+        $offers = $offerRepository->findBy([], [ 
+            "user_id" => $userconnecte,]
+            );
+
         $form1 = $this->createForm(ContactType::class);
 
         $contact = $form1->handleRequest($request);
@@ -80,7 +84,8 @@ class SiteController extends AbstractController
         }
         return $this->render('site/profil.html.twig', [
             'controller_name' => 'SiteController',
-            'form1' => $form1->createView()
+            'form1' => $form1->createView(),
+            'offers' => $offers,
         ]);
     }
 
