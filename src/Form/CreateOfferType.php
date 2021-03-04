@@ -16,7 +16,7 @@ use Symfony\Component\Form\ChoiceList\ChoiceList;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Doctrine\ORM\EntityRepository;
 
-class OfferType extends AbstractType
+class CreateOfferType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

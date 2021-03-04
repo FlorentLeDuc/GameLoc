@@ -26,10 +26,11 @@
         display: flex;
         box-sizing: 0 1.4rem 8rem rgba(0,0,0,.2);   
         align-items: center;
+        margin-bottom: 8rem;
     }
 
     :first-of-type.blog-post{
-        margin-bottom: 5rem;
+
         border-radius: 0.8rem;
     }
 
