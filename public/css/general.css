@@ -31,46 +31,16 @@
             position: relative;
             background-attachment: fixed;
         }
-        .home-content{
-            background-color: #55545400;
-            padding: 20px;
-        }
+
         
-        .title {
-            font-family: "Montserrat";
-            font-weight: 900;
-            text-align: center;
-            color: #FFF;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            letter-spacing: 1px;
-            background-size: 400%;
-            background-position: 15% 100%;
-            color: transparent;
-            /* -moz-background-clip: text;
-            -webkit-background-clip: text; */
-            background-clip: text;
-            text-transform: uppercase;
-            font-size: 11vw;
-            line-height: .75;
-            text-shadow: 0 0 10px #0000007a;
-        }
         
-        .subheading {
-            color: cornsilk;
-            font-size: 25px;
-        }
+
 
         .main_offer{
             background-color:#2e2e2e ;
         }
 
-        .overlay {
-            background: rgba(0, 0, 0, 0.301);
-        
-        }
+
     /******************   ALL END   *********************/
 
 
@@ -135,10 +105,40 @@
 
 
 
-    /********************   ABOUT   **********************/
+    /********************   BODY   **********************/
+        #section08 a {
+            padding-top: 60px;
+        }
+        
+        #section08 a span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 30px;
+            height: 50px;
+            margin-left: -15px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
+        
+        #section08 a span::before {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            content: '';
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            background-color: #fff;
+            border-radius: 100%;
+            box-sizing: border-box;
+        }
+        
 
+        
 
-    /******************   ABOUT END   *********************/
+    /******************   BODY END   *********************/
 
 
 
@@ -168,46 +168,7 @@
 
 
 
-#section08 a {
-    padding-top: 60px;
-}
 
-#section08 a span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 30px;
-    height: 50px;
-    margin-left: -15px;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    box-sizing: border-box;
-}
-
-#section08 a span::before {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    content: '';
-    width: 6px;
-    height: 6px;
-    margin-left: -3px;
-    background-color: #fff;
-    border-radius: 100%;
-    box-sizing: border-box;
-}
-
-.scroll-btn {
-    position: absolute;
-    left: 50%;
-    bottom: 10vh;
-    transform: translateX(-50%);
-    cursor: pointer;
-}
-
-.row{
-    margin: 0;
-}
 
 
 
@@ -235,50 +196,6 @@ header {
     background: rgba(0, 0, 0, 0.600);
 }
 
-.home .home-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.home .home-title {
-    color: #fff;
-    font-size: 60px;
-    margin-bottom: 20px;
-}
-
-.home .home-desc {
-    color: #fff;
-    font-size: 50px;
-}
-
-.home .button {
-    background: #aeae81d3;
-    color: #fff;
-    width: 11em;
-    font-size: 1.3em;
-    text-align: center;
-    padding: 10px 0;
-    margin: 1%;
-}
-
-
-
-
-/*****************************************************
-*                    BODY                         *
-*****************************************************/
-
-/* CARD */
-
-.card-group {
-    padding: 5em;
-}
-
-.card {
-    padding: 3em;
-}
 
 
 
@@ -484,16 +401,11 @@ footer {
 
 .bottom center a:hover {
     text-decoration: underline;
-
 }
 
-
-
-
-.offer_title {
-    display: flex;
-    justify-content: center;
-}
+/*****************************************************
+*                    FOOTER END                      *
+*****************************************************/
 
 
 
@@ -509,7 +421,9 @@ footer {
 
 
 
-
-
-
-
+/*****************************************************
+*                    PROFIL                          *
+*****************************************************/
+        .row{
+            margin: 0;
+        }
