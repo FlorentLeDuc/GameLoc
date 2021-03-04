@@ -31,6 +31,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->setCreationDate(new \DateTime());
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
