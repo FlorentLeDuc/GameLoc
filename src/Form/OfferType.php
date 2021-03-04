@@ -12,6 +12,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\ChoiceList\ChoiceList;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Doctrine\ORM\EntityRepository;
 
 class OfferType extends AbstractType
 {
@@ -58,17 +61,40 @@ class OfferType extends AbstractType
                     'multiple' => false,
                     'expanded' => true,
                     ])
-
+            
+            ->add('subcat', EntityType::class, [
+                'mapped' => false,
+                'class' => Category::class,
+            
+                // uses the User.username property as the visible option string
+                'choice_label' => 'title',
+                'query_builder' => function (EntityRepository $er) {
+                    
+                    return $er->createQueryBuilder('c')
+                        ->where('c.id < 3')
+                        ->orderBy('c.id', 'ASC');
+                },
+            
+                // used to render a select box, check boxes or radios
+                'multiple' => false,
+                'expanded' => true,
+                
+                    ])
+            
+            
             ->add('category', EntityType::class, [
                 // looks for choices from this entity
                 'class' => Category::class,
             
+                'choice_value' => function (?Category $entity) {
+                    return $entity ? $entity?->getId()."-".$entity?->getSubCat()?->getId()  : '';
+                },
                 // uses the User.username property as the visible option string
                 'choice_label' => 'title',
                     
                     // used to render a select box, check boxes or radios
                     'multiple' => false,
-                    'expanded' => true,
+                    'expanded' => false,
                     ])
         ;
     }
