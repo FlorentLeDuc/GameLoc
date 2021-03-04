@@ -5,7 +5,14 @@
 {% block body %}
 <div class="decalnav ">
 <div class="rounded container">
-    
+    <h1>Modification du profil de {{ app.user.username }} </h1>
+        {{ form_start(form) }}
+                {{ form_row(form.username, {label: 'Pseudonyme'}) }}
+                {{ form_row(form.email, {label: 'Email'}) }}
+                {{ form_row(form.adress, {label: 'Adresse'}) }}
+                {{ form_row(form.zipcode, {label: 'Code postal'}) }}
+                <button href="{{ path('profil') }}" class="btn profile-button" type="submit">Save Profile</button>
+       {{ form_end(form) }}
 </div>
 </div>
 {% endblock %}
