@@ -168,12 +168,13 @@
 
     /* HEADER */
     header {
-        width: 100vw;
+        width: auto;
         height: 12%;
     }
     
     .title{
         font-size: 15vw;
+        background-image: url('../uploads/images/giphy.jpg')
     }
 
 
@@ -407,9 +408,5 @@
 }
 
 @media screen and (max-width:900px) {
-
-    .title {
-        text-shadow: 0px 0px 3px #aeae81;
-    }
 
 }
