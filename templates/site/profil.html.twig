@@ -43,9 +43,9 @@
                 </div>
                     <div class="profilrub">
                         <ul class="nav nav-pills nav-stacked">
-                            <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
-                            <li><a href="#"><i class="fa fa-calendar"></i> Recent Activity <span class="label label-warning pull-right r-activity">9</span></a></li>
-                            <li><a href="{{ path('editprofil') }}"> <i class="fa fa-edit"></i> Edit profile</a></li>
+                            <li class="active"><a href="#"> <i class="fa fa-user"></i> Profil</a></li>
+                            <li><a href="#"><i class="fa fa-calendar"></i> Dernierres Annonces <span class="label label-warning pull-right r-activity">9</span></a></li>
+                            <li><a href="{{ path('editprofil') }}"> <i class="fa fa-edit"></i> Modifier profile</a></li>
                         </ul>
                     </div>
             </div>
@@ -106,8 +106,8 @@
                                                     <p class=" blog-post_price">PRIX<i class="fas fa-euro-sign"></i></p>
                                                     <p class="blog-post_text">{{ offer.category.title }}</p>
                                                     <a href="{{ path('offer', {'id': offer.id}) }}" class="blog-post_cta">En savoir plus</a> 
-                                                    <a href="{{ path('offer_show', {'id': offer.id}) }}">show</a>
-                                                    <a href="{{ path('editoffer', {'id': offer.id}) }}">edit</a>
+                                                    {# <a href="{{ path('offer_show', {'id': offer.id}) }}" class="btn blog-post_btn">show</a> #}
+                                                    <a href="{{ path('editoffer', {'id': offer.id}) }}"class="btn blog-post_btn">Modifier</a>
                                                 </div> 
                                             </div>
                                         </section>

@@ -19,6 +19,23 @@ class OfferRepository extends ServiceEntityRepository
         parent::__construct($registry, Offer::class);
     }
 
+    public function chercherMot ($mot)
+    {
+        $entityManager = $this->getEntityManager();
+
+        // ATTENTION: REQUETE EN DQL (Doctrine Query Language)
+        $query = $entityManager->createQuery(
+            'SELECT a
+            FROM App\Entity\Offer a
+            WHERE a.title LIKE :title
+            ORDER BY a.publication_date  DESC'
+        )
+        ->setParameter('title', "%$mot%");
+        // on rajoute les % pour chercher un titre qui contient le mot
+        // https://sql.sh/cours/where/like
+
+        return $query->getResult();
+    }
     // /**
     //  * @return Offer[] Returns an array of Offer objects
     //  */
