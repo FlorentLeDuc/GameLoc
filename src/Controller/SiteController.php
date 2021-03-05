@@ -90,7 +90,6 @@ class SiteController extends AbstractController
     #[Route('/offers', name: 'offers')]
     public function offers(OfferRepository $offerRepository, Request $request, MailerInterface $mailer): Response
     {
-
         $form1 = $this->createForm(ContactType::class);
 
         $contact = $form1->handleRequest($request);
@@ -110,10 +109,28 @@ class SiteController extends AbstractController
 
             $this->addFlash('message', 'Votre e-mail a bien été envoyé');
         }
-        $offers = $offerRepository->findBy([], [ "publication_date" => "DESC"]);
+
+        $mot = $request->get('mot');
+        // DEBUG
+        dump($mot);
+        if (!empty($mot)) {
+            // on va lancer la recherche sur le mot
+            // recherche exacte
+            // $annonces = $annonceRepository->findBy([
+            //     "titre" => $mot,
+            // ], [ "datePublication" => "DESC"]);
+
+            // si on veut que le titre puisse avoir un texte en plus que le mot cherché
+            // => SQL LIKE 
+            // https://sql.sh/cours/where/like
+            $offers = $offerRepository->chercherMot($mot);
+
+        }else{
+            $offers = $offerRepository->findBy([], [ "publication_date" => "DESC"]);
+        }
         return $this->render('site/offers.html.twig', [
             'controller_name' => 'SiteController',
-            'offers' => $offers,
+            'offers' => $offers ?? [],
             'form1' => $form1->createView()
         ]);
     }
