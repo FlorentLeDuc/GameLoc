@@ -56,12 +56,10 @@ class SiteController extends AbstractController
     }
 
     #[Route('/profil', name: 'profil')]
-    public function profil(Request $request, MailerInterface $mailer, OfferRepository $offerRepository, User $user): Response
+    public function profil(Request $request, MailerInterface $mailer): Response
     {
-        $userconnecte = $this->getUser(User::class, $user);
-        $offers = $offerRepository->findBy([], [ 
-            "user_id" => $userconnecte,]
-            );
+        $userconnecte = $this->getUser();
+        $offers = $userconnecte->getOffers();
 
         $form1 = $this->createForm(ContactType::class);
 
