@@ -58,31 +58,60 @@
 *****************************************************/
 
     header {
+
         height: auto;
-        padding: 10px 0;
         position:fixed;
         width: 100%;
         z-index: 9;
+        background: linear-gradient(-175deg, rgb(0, 0, 0) , transparent, transparent, transparent 200% );
     }
 
     nav {
         justify-content: center;
-        height: 7vh;
+        height: 9vh;
     }
-    
-    header nav ul li{
-        justify-content: center;
+
+    nav>a{
+        height: 100%;
+        padding: 0;
+        margin: 10px;
+    }
+
+    #logo{
+        height: 100%;
     }
     
     header nav ul li a{
         text-decoration: none;
-        color: white;
+        color: #aeae81;
+        height: 100%;
+    }
+
+    #nav1{
+        color: #ffffff;
     }
     
+    #nav2{
+        color: #64644b;
+    }
+    #nav3{
+        color: #707053;
+    }
+    #nav4{
+        color: #7e7e5c;
+    }
+    #nav5{
+        color: #a0a079;
+    }
+
+
+
     .sr-only{
         color: white;
     }
     
+
+
     .nav-link {
         text-decoration: none;
     }
@@ -106,7 +135,7 @@
     }
     
     .sticky {
-        background: rgba(0, 0, 0, 0.664);
+        background: rgba(0, 0, 0, 0.863);
         /* background: rgba(174, 174, 129, 0.842); */
         color: rgba(0, 0, 0, 0.664);
         position: fixed;

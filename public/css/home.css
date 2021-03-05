@@ -20,8 +20,8 @@
         align-items: center;
         justify-content: center;
         letter-spacing: 1px;
-        background-size: 400%;
-        background-position: 15% 100%;
+        background-size: 59%;
+        /* background-position: 60% 25%; */
         color: transparent;
         /* -moz-background-clip: text;
         -webkit-background-clip: text; */
@@ -92,21 +92,37 @@
 /*****************************************************
 *                       ABOUT                        *
 *****************************************************/
+.encoche{
+    width: 90vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top:-6px ;
+
+}
 
 .about{
-    width: 80vw;
+    width: 99%;
     margin: auto;
     text-align: center;
+    background-color: #aeae81d3; 
+    position: relative;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
 }
 
 .etape{
-    background-color: ;
+    background-color: white ;
     width: 50vw;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
 }
+
+
 
 
 
