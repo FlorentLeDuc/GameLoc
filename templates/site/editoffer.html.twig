@@ -1,0 +1,14 @@
+{% extends 'parent.html.twig' %}
+
+{% block title %}Modification de l'annonce {{ offer.title }}{% endblock %}
+
+{% block body %}
+<div class="decalnav ">
+<div class="rounded container">
+    <h1>Modification de l'annonce {{ offer.title }} </h1>
+        {{ form_start(form) }}
+                <button href="{{ path('profil') }}" class="btn profile-button" type="submit">Edit annonce</button>
+       {{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

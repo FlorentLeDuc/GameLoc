@@ -304,4 +304,41 @@ class SiteController extends AbstractController
             'form1' => $form1->createView()
         ]);
     }
+
+    #[Route('/{id}/edit', name: 'editoffer', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Offer $offer, MailerInterface $mailer): Response
+    {
+        $form1 = $this->createForm(ContactType::class);
+        $contact = $form1->handleRequest($request);
+
+        if($form1->isSubmitted() && $form1->isValid()){
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('contact@gameloc.com')
+                ->subject('Contact depuis le site')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'sujet' => $contact->get('sujet')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            $mailer->send($email);
+
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+         }
+        $form = $this->createForm(OfferType::class, $offer);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('profil');
+        }
+
+        return $this->render('site/editoffer.html.twig', [
+            'offer' => $offer,
+            'form' => $form->createView(),
+            'form1' => $form1->createView(),
+        ]);
+    }
 }
