@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-<section class="container decalnav">
+<section class="container decalnav decalcard">
     <div class="row">
         <h1>Chercher des Annonces</h1>
         <form action="" method="GET">
@@ -16,8 +16,8 @@
         </form>
     </div>
 </section>
-<section class="decalnav pad_offers"><a class= "btn btnadmin bbtn" href="{{
- path('createoffer') }}">Créer une annonce</a>
+{# <section class="decalnav pad_offers"><a class= "btn btnadmin bbtn" href="{{
+ path('createoffer') }}">Créer une annonce</a> #}
 	{% for offer in offers %}
 		<section class="cards_body">
 			<div class="blog-post">

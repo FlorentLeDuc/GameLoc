@@ -7,14 +7,14 @@
         <h1>Créez votre annonce</h1>
         <div class="container">
             {{ form_start(Offer) }}
-                {# {{ form_row(Offer.title, {label: 'Le titre de votre annonce'}) }}
+                {{ form_row(Offer.title, {label: 'Le titre de votre annonce'{'class': 'foo'}}) }}
                 {{ form_row(Offer.content, {label: 'Description'}) }}
                 {{ form_row(Offer.picture, {label: 'une photo'}) }}
                 {{ form_row(Offer.selling_price, {label: 'Prix vendu'}) }}
                 {{ form_row(Offer.rent_price, {label: 'Prix loué'}) }}
                 {{ form_row(Offer.statement, {label: 'Etat du produit'}) }}
                 {{ form_row(Offer.subcat, {label: 'subcat'}) }}
-                {{ form_row(Offer.category, {label: 'Category'}) }} #}
+                {{ form_row(Offer.category, {label: 'Category'}) }}
                 <button href="{{ path('offers') }}" class="btn profile-button" type="submit">Publie ton annonce</button>
             {{ form_end(Offer) }}
         </div>
