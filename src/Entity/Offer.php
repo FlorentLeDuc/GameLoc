@@ -4,6 +4,9 @@ namespace App\Entity;
 
 use App\Repository\OfferRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\User;
+use App\Entity\Game;
+use App\Entity\Category;
 
 /**
  * @ORM\Entity(repositoryClass=OfferRepository::class)
@@ -157,36 +160,36 @@ class Offer
         return $this;
     }
 
-    public function getUser(): ?user
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?user $user): self
+    public function setUser(?User $user): self
     {
         $this->user = $user;
 
         return $this;
     }
 
-    public function getGame(): ?game
+    public function getGame(): ?Game
     {
         return $this->game;
     }
 
-    public function setGame(?game $game): self
+    public function setGame(?Game $game): self
     {
         $this->game = $game;
 
         return $this;
     }
 
-    public function getCategory(): ?category
+    public function getCategory(): ?Category
     {
         return $this->category;
     }
 
-    public function setCategory(?category $category): self
+    public function setCategory(?Category $category): self
     {
         $this->category = $category;
 
