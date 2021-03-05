@@ -72,13 +72,13 @@
         border-radius: 0;
         -webkit-border-radius: 0;
         color: #89817f;
-        border-left: 5px solid #fff;
+        /* border-left: 5px solid #fff; */
     }
 
     .profile-nav ul>li>a:hover,
     .profile-nav ul>li>a:focus,
     .profile-nav ul li.active a {
-        background: #f8f7f5 !important;
+        background: #f8f7f5 ;
         border-left: 5px solid #a6a867;
         color: #89817f !important;
     }
@@ -396,6 +396,14 @@
 
     .profilfont{
         padding-bottom: 105px;
+    }
+
+    .blog-post_btn{
+        background: #a6a867;
+        box-shadow: none;
+        border: none;
+        color: white;
+    }
     }
 /********************   VIEW END  **********************/
 
