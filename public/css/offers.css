@@ -32,11 +32,13 @@
     :first-of-type.blog-post{
 
         border-radius: 0.8rem;
+        border: 2px ridge #2e2e2e;
     }
 
     .blog-post_info{
         background-color: #fff;
         border-radius: .8rem;
+        border: 2px ridge #2e2e2e;
         padding: 1.25rem;
         min-width: 16rem;
         max-width: 16rem;
@@ -58,6 +60,7 @@
         object-fit: cover;
         display: block;
         border-radius: .8rem;
+        border: 2px ridge #2e2e2e;
     }
 
     .blog-post_img::before{
