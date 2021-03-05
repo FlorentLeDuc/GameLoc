@@ -18,7 +18,7 @@
 		<header>
 			{% block navbar %}
 				<div>
-					<nav class="navbar navbar-expand-lg">
+					<nav class="navbar navbar-expand-lg navbar-light">
 						<a href="{{ path('index') }}"><img id="logo" src="{{ asset('uploads/images/Logofinal2.png') }}" alt="GameLoc"></a>
 				
 						{% if is_granted('ROLE_ADMIN')%}
@@ -28,7 +28,7 @@
 						{% endif %}
 
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon "></span>
+							<span class="navbar-toggler-icon"></span>
 						</button>
 
 						<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
