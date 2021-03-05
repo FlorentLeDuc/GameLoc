@@ -34,11 +34,12 @@ class OfferController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
                         // code de gestion de upload image
+                        $userconnecte = $this->getUser();
                         $imageFile = $form->get('picture')->getData();
                         $offer->setPublicationDate(new \DateTime());
-                        $offer->setUser();
+                        $offer->setUser($userconnecte);
                         // this condition is needed because the 'image' field is not required
-                        // so the PDF file must be processed only when a file is uploaded
+                        // so the PDF file must be processed only when  a file is uploaded
                         if ($imageFile) {
                             $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                             // this is needed to safely include the file name as part of the URL
