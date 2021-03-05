@@ -412,12 +412,18 @@
     .blocform {
         padding: 20px;
         width: 400px;
-        background-color: #aeae81c5;
+        background-color: #ffffff38;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        border-radius: 15px;
+        border-radius: 5px;
+        border-top: solid 2px #aeae81 ;
+    }
+
+    .blocform button{
+        width: 100%;
+        background-color: #aeae81d3;
     }
 
     .overlay2 {
@@ -458,6 +464,12 @@ a{
     text-decoration: none;
 }
 
+.editprofil{
+    width: 50%;
+    display: flex;
+    color: red;
+    background-color: red;
+}
 
 
 .form-control:focus {

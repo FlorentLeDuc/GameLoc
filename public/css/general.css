@@ -61,7 +61,7 @@
 
         height: auto;
         position:fixed;
-        width: 100%;
+        width: 100vw;
         z-index: 9;
         background: linear-gradient(-175deg, rgb(0, 0, 0) , transparent, transparent, transparent 200% );
     }
@@ -69,6 +69,7 @@
     nav {
         justify-content: center;
         height: 9vh;
+        width: 100%;
     }
 
     nav>a{
@@ -142,7 +143,7 @@
         z-index: 1;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
     }
     
 

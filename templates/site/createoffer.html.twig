@@ -4,8 +4,8 @@
 {% block body %}
 <section class="decalnav home">
     <div class="overlay2">
+        <div class="blocform">
         <h1>Créez votre annonce</h1>
-        <div class="container">
             {{ form_start(Offer) }}
                 {{ form_row(Offer.title, {label: 'Le titre de votre annonce'}) }}
                 {{ form_row(Offer.content, {label: 'Description'}) }}
@@ -15,6 +15,8 @@
                 {{ form_row(Offer.statement, {label: 'Etat du produit'}) }}
                 {{ form_row(Offer.subcat, {label: 'subcat'}) }}
                 {{ form_row(Offer.category, {label: 'Category'}) }}
+                {{ form_row(Offer.game, {label: 'Game'}) }}
+
                 <button href="{{ path('offers') }}" class="btn profile-button" type="submit">Publie ton annonce</button>
             {{ form_end(Offer) }}
         </div>
