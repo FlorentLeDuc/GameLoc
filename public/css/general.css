@@ -102,9 +102,17 @@
         color: #bdbd9a;
     }
     #nav5{
-        color: #aeae81;
+        color: #dadac2;
     }
-
+    #nav6{
+        color: #9c9c6b;
+    }
+    #nav7{
+        color: #8a8a55;
+    }
+    #nav8{
+        color: #80804d;
+    }
 
 
     .sr-only{
@@ -149,7 +157,7 @@
     
 
     .decalnav {
-        padding-top: 75px;
+        padding-top: 111px;
     }        
 /*****************************************************
 *                      NAV END                       *
@@ -314,6 +322,10 @@
 
     .right form .btn {
         margin-top: 10px;
+    }
+
+    .btn{
+        background: #aeae81a4;
     }
 
     .right form .btn button {

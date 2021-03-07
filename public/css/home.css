@@ -47,13 +47,87 @@
         margin: 1%;
     }
 
-    .scroll-btn {
+    .scroll-down {
+        height: 50px;
+        width: 30px;
+        border: 2px solid black;
+        /* border: 2px solid #aeae81d3; */
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        /* background-image: url('../uploads/images/giphy.gif'); */
+      }
+
+      .scroll-down::before,
+      .scroll-down::after {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        height: 10px;
+        width: 10px;
+        transform: translate(-50%, -100%) rotate(45deg);
+        border: 2px solid #aeae81d3;
+        /* border: 2px solid #000000; */
+        border-top: transparent;
+        border-left: transparent;
+        animation: scroll-down 1s ease-in-out infinite;
+      }
+      .scroll-down::before {
+        top: 30%;
+        animation-delay: 0.3s;
+        /* animation: scroll-down 1s ease-in-out infinite; */
+      }
+      
+      @keyframes scroll-down {
+        0% {
+          /* top:20%; */
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 1;
+        }
+        100% {
+          top: 90%;
+          opacity: 0;
+        }
+      }
+      
+    /* .scroll-btn {
         position: absolute;
         left: 50%;
         bottom: 10vh;
         transform: translateX(-50%);
         cursor: pointer;
     }
+    .section08 a span::before {
+        top: 30%;
+        animation-delay: 0.3s;
+        
+      }
+
+    @keyframes scroll-btn {
+        0% {
+          
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 1;
+        }
+        100% {
+          top: 90%;
+          opacity: 0;
+        }
+      }
+      
 
     #section08 a {
         padding-top: 60px;
@@ -82,7 +156,7 @@
         background-color: #fff;
         border-radius: 100%;
         box-sizing: border-box;
-    }
+    } */
 
 /*****************************************************
 *                     HOME END                       *
