@@ -464,12 +464,12 @@ a{
     text-decoration: none;
 }
 
-.editprofil{
+/* .editprofil{
     width: 50%;
     display: flex;
     color: red;
     background-color: red;
-}
+} */
 
 
 .form-control:focus {

@@ -42,7 +42,7 @@
     .blog-post_info{
         background-color: #fff;
         border-radius: .8rem;
-        border: 2px ridge #2e2e2e;
+        box-shadow: -1px 3px 10px black inset;
         padding: 1.25rem;
         min-width: 16rem;
         max-width: 16rem;

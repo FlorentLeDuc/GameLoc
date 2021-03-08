@@ -10,7 +10,7 @@
 			<div class="overlay">
 				<div class="container">
 					<div class="home-content">
-						<h1 class="title" style="background-image: url({{ asset('uploads/images/giphy.jpg') }})">GameLoc</h1>
+						<h1 class="title" style="background-image: url({{ asset('uploads/images/giphy.gif') }})">GameLoc</h1>
 						<h2 class="subheading">Bienvenue sur
 							<span class="underline--magical">GameLoc</span>
 							, si tu cherches à louer ou mettre à disposition des Jeux videos ou Jeux de sociétés, tu es au bon endroit.</h2>
@@ -27,24 +27,32 @@
 				</div>
 			</div>
 		</section>
+
 		<section id="encoche" class="encoche">
 			<div id="about" class="about">
 				<h2 class="centre">Comment ça marche ?</h2>
-				<div class="etapes">
-					<div class="etape">
-						<h3>Etape 1</h3>
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, unde quod perspiciatis sapiente iste temporibus officia harum, asperiores in velit, vel repudiandae reiciendis eaque nobis. Eligendi autem doloremque esse in?</p>
+				<div>
+					<div class="images">
+						<img src="{{ asset('uploads/images/unnamed.png') }}" alt="game">
+						<img src="{{ asset('uploads/images/persos.png') }}" alt="game">
 					</div>
-					<div class="etape">
-						<h3>Etape 2</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum recusandae repellat eius ullam, velit sed doloremque blanditiis vitae, porro dignissimos accusantium sequi quis. Officia ipsam veritatis harum, dolorum repudiandae unde!</p>
+					<div class="etapes">
+						<div class="etape">
+							<h3>Etape 1</h3>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, unde quod perspiciatis sapiente iste temporibus officia harum, asperiores in velit, vel repudiandae reiciendis eaque nobis. Eligendi autem doloremque esse in?</p>
+						</div>
+						<div class="etape">
+							<h3>Etape 2</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum recusandae repellat eius ullam, velit sed doloremque blanditiis vitae, porro dignissimos accusantium sequi quis. Officia ipsam veritatis harum, dolorum repudiandae unde!</p>
+						</div>
+						<div {#id ="scroll-btn"#} class="etape">
+							<h3>Etape 3</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias et quas obcaecati ex aspernatur dolorem aliquam alias dicta doloremque ullam? Eligendi excepturi minima similique voluptas officia voluptatum nisi dolorem ullam!</p>
+						</div>
+						<div id ="scroll-btn"></div>
 					</div>
-					<div {#id ="scroll-btn"#} class="etape">
-						<h3>Etape 3</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias et quas obcaecati ex aspernatur dolorem aliquam alias dicta doloremque ullam? Eligendi excepturi minima similique voluptas officia voluptatum nisi dolorem ullam!</p>
-					</div>
-					<div id ="scroll-btn"></div>
 				</div>
+				<img src="{{ asset('uploads/images/boards.png') }}" alt="game">
 			</div>
 		</section>
 		<h1>Offer index</h1>
