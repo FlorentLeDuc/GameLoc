@@ -1,4 +1,4 @@
-console.log ("ola")
+
 $(document).ready(function(){
 
 
@@ -13,10 +13,10 @@ $(document).ready(function(){
         var sc = $(this).scrollTop();
         if(sc > 50){
             $('header').addClass('sticky');
-         console.log ("plus")   
+           
         }else{
             $('header').removeClass('sticky');
-        console.log ("ere")
+        
         }
     });
 });
