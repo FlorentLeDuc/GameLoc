@@ -166,6 +166,7 @@
         border: 2px ridge #2e2e2e;
         width: 30vw;
         height: 30vw;
+        object-fit: cover;
     }
 
     .offer-btn{
