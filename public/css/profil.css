@@ -11,6 +11,17 @@
     .panel-footer .btn{
         background: #e3dc95;
     }
+
+    #cards_body{
+        position: relative;
+        transform: translate(-65%, 0);
+    }
+    .infopers{
+        text-align: center;
+        color: #e7e7d5;
+        padding-bottom: 78px;
+        padding-top: 46px;
+    }
     
     .nav {
         display: flex;
@@ -118,6 +129,8 @@
         color: #7a7a7a;
     }
 
+
+
     .bio-graph-heading {
         background: #a6a86773;
         color: #fff;
@@ -132,6 +145,7 @@
 
     .bio-graph-info {
         color: #89817e;
+        padding-bottom: 120px;
     }
 
     .bio-graph-info h1 {
@@ -150,7 +164,10 @@
     .bio-row p span {
         width: 100px;
         display: inline-block;
+        color: #e7e7d5;
+        font-size: 1.0625rem;
     }
+
 
     .bio-chart,
     .bio-desk {

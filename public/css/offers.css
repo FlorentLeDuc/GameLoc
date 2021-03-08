@@ -124,6 +124,62 @@
     .bbtn{
         margin-left: 1600px;
     }
+
+
+    .offer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .c1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5rem;
+        background-color: #aeae81;
+        color: #151515;
+        border-radius: 0.8rem;
+        border: 2px ridge #2e2e2e;
+        font-size: 1.3rem;
+    }
+
+    .offer-titre{
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        color:#e7e7d5;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        
+    }
+
+    .offer-titre2{
+        text-align: center;
+        color:#e7e7d5;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .pic-offer{
+        border-radius: 0.8rem;
+        border: 2px ridge #2e2e2e;
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .offer-btn{
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .form-cont{
+        padding-bottom: 6rem;
+    }
+
+    .btn-lg1{
+        margin-top: 2rem;
+        text-align: center;
+    }
 /******************   VIEW END   *********************/
 
 
