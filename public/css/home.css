@@ -178,6 +178,12 @@
 
 }
 
+.centre{
+  /* padding-bottom: 100px; */
+  text-align: end;
+  padding-right: 248px;
+}
+
 .about{
     height: 90%;
     width: 99%;
@@ -191,6 +197,8 @@
     border-radius: 10px;
     padding-bottom: 30px;
     padding-top: 100px;
+    box-shadow: 1px 1px 50px 1px black;
+
 }
 
 .about h2{
