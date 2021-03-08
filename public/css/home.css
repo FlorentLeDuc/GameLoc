@@ -210,6 +210,9 @@
   z-index: 10;
   border-radius: 50% 20% / 10% 40%;
 }
+.etapes p{
+    font-size: 20px;
+}
 
 .etape{
     width: 90%;
