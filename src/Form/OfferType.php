@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\ChoiceList\ChoiceList;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class OfferType extends AbstractType
 {
@@ -35,9 +36,9 @@ class OfferType extends AbstractType
                 ],
             ])
             // ->add('publication_date')
-            ->add('selling_price')
-            ->add('rent_price')
-            ->add('statement')
+            ->add('selling_price', TextType::class)
+            ->add('rent_price', TextType::class)
+            ->add('statement', TextType::class)
             // ->add('user', EntityType::class, [
             //     // looks for choices from this entity
             //     'class' => User::class,
