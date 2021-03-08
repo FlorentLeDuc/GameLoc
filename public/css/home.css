@@ -191,15 +191,21 @@
     padding-bottom: 30px;
 }
 
+.about h2{
+  color: white;
+}
+
 .etapes{
-    border-radius: 10px;
-    background-color: white ;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    height: 80%;
-    z-index: 10;
+  box-shadow: inset 1px 1px 10px 1px black;
+  margin-right: 20px;
+  background-color: white ;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  height: 80%;
+  z-index: 10;
+  border-radius: 50% 20% / 10% 40%;
 }
 
 .etape{
