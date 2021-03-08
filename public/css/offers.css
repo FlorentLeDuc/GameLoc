@@ -164,6 +164,8 @@
     .pic-offer{
         border-radius: 0.8rem;
         border: 2px ridge #2e2e2e;
+        width: 30vw;
+        height: 30vw;
     }
 
     .offer-btn{
