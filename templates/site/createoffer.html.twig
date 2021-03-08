@@ -13,9 +13,9 @@
                 {{ form_row(Offer.selling_price, {label: 'Prix vendu'}) }}
                 {{ form_row(Offer.rent_price, {label: 'Prix loué'}) }}
                 {{ form_row(Offer.statement, {label: 'Etat du produit'}) }}
-                {{ form_row(Offer.subcat, {label: 'subcat'}) }}
+                {{ form_row(Offer.subcat, {label: 'Jeux-vidéo ou Jeux de société ?'}) }}
                 {{ form_row(Offer.category, {label: 'Category'}) }}
-                {{ form_row(Offer.game, {label: 'Game'}) }}
+                {# {{ form_row(Offer.game, {label: 'Profil du jeu'}) }} #}
 
                 <button href="{{ path('offers') }}" class="btn profile-button" type="submit">Publie ton annonce</button>
             {{ form_end(Offer) }}

@@ -51,17 +51,17 @@ class OfferType extends AbstractType
             //         'expanded' => true,
             //         ])
             
-            ->add('game', EntityType::class, [
-                // looks for choices from this entity
-                'class' => Game::class,
+            // ->add('game', EntityType::class, [
+            //     // looks for choices from this entity
+            //     'class' => Game::class,
             
-                // uses the User.username property as the visible option string
-                'choice_label' => 'title',
+            //     // uses the User.username property as the visible option string
+            //     'choice_label' => 'title',
                     
-                    // used to render a select box, check boxes or radios
-                    'multiple' => false,
-                    'expanded' => false,
-                    ])
+            //         // used to render a select box, check boxes or radios
+            //         'multiple' => false,
+            //         'expanded' => false,
+            //         ])
             
             ->add('subcat', EntityType::class, [
                 'mapped' => false,
