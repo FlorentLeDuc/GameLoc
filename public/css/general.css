@@ -29,7 +29,7 @@
     }
 
     .home {
-        height: 100vh;
+        height: 110vh;
         background-image: url('../uploads/images/pexels-cottonbro-4842488.jpg');
         background-size: cover;
         background-position: center;
@@ -42,6 +42,7 @@
     }
 
     .overlay {
+        height: 100vh;
         position: absolute;
         top: 0;
         bottom: 0;
