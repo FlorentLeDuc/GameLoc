@@ -16,8 +16,18 @@
     }
 
 
-    
+    .about img{
+        display: none;
+    }
 
+    .images{
+        display: none;
+    }
+
+    .etapes{
+        width: auto;
+        margin: 10px;
+    }
 
     .navbar{
         display: flex;
@@ -238,6 +248,7 @@
         
         margin-top: 4%;
     }
+
 
 
     .blog-post_info{
