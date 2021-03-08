@@ -30,12 +30,11 @@
 		<div class="p-3 my-2 rounded-2 success">{{ message }}</div>
 	{% endfor %}
 	<div class="container">
-	{{ form_start(form) }}
-				{{ form_widget(form.title) }}
-				{{ form_row(form.email) }}
-				{{ form_row(form.message) }}
-	<button class="btn btn btn-lg">Envoyer</button>
-	{{ form_end(form) }}
+		{{ form_start(form) }}
+					{{ form_row(form.email) }}
+					{{ form_row(form.message) }}
+		<button class="btn btn btn-lg">Envoyer</button>
+		{{ form_end(form) }}
 	</div>
 </div>
 
@@ -46,9 +45,9 @@
 
 {% endblock %}
 
-{% block javascripts %}
+{# {% block javascripts %}
 	<script>
-		window.onload = () => {
+		window.onload => {
 			document.querySelector("#offer_contact_title").value = "{{ offer_contact.title|raw }}";
 			// On met un écouteur d'évènements sur tous les boutons répondre
 			document.querySelectorAll("[data-reply]").forEach(element => {
@@ -58,4 +57,4 @@
 			});
 		}
 	</script>
-{% endblock %}
+{% endblock %} #}
