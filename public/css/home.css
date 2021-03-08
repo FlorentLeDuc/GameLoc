@@ -194,7 +194,7 @@
     position: relative;
     left: 0;
     right: 0;
-    border-radius: 10px;
+    border-radius: 10px 10px / 10% 40%;
     padding-bottom: 30px;
     padding-top: 100px;
     box-shadow: 1px 1px 50px 1px black;
@@ -216,7 +216,10 @@
   margin-left: auto;
   height: 80%;
   z-index: 10;
-  border-radius: 50% 20% / 10% 40%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 60%; */
 }
 
 .etape{
