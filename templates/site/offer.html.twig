@@ -13,14 +13,16 @@
 			</div>
 				<div class="card c1">
 					<div class="card-body">
-
 						<span class="card-subtitle">{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</span>
 					</div>
-
 						<p class="card-text">
 							{{ offer.content }}
 						</p>
 					<h4 class="card-title">{{ offer.user.username }}</h4>
+					<p>Prix de vente:{{ offer.selling_price ?? ""}}</p>
+					<p>Prix de location:{{ offer.rent_price ?? ""}}</p>
+					<p>Etat du produit: {{ offer.statement }}/5</p>
+					<p>Catégorie: {{ offer.category.title }}</p>
 				</div>
 			</div>
 		</div>
