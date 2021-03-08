@@ -23,8 +23,8 @@
         background-size: 59%;
         /* background-position: 60% 25%; */
         color: transparent;
-        /* -moz-background-clip: text;
-        -webkit-background-clip: text; */
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
         background-clip: text;
         text-transform: uppercase;
         font-size: 11vw;
@@ -57,7 +57,7 @@
         bottom: 20px;
         border-radius: 50px;
         cursor: pointer;
-        /* background-image: url('../uploads/images/giphy.gif'); */
+        background-image: url('../uploads/images/giphy.gif');
       }
 
       .scroll-down::before,
