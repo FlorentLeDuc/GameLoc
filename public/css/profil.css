@@ -22,7 +22,12 @@
         padding-bottom: 78px;
         padding-top: 46px;
     }
+    .modifclasstwig{
+        font-size: 1.0625rem;
+        padding-left: 10px;
+    }
     
+
     .nav {
         display: flex;
         flex-wrap: wrap;
