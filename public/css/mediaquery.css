@@ -140,6 +140,16 @@
     .pad_offers{
         padding-bottom: 5rem;
     }
+    .pic-offer{
+        height: 80%;
+        width: 100%;
+    }
+    .offer{
+        display: initial;
+        }
+    .c1{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 868px) {
@@ -195,6 +205,16 @@
         font-size: 0.7rem ;
         margin-bottom: 0rem;
     }
+    .pic-offer{
+        height: 80%;
+        width: 100%;
+    }
+    .offer{
+        display: initial;
+        }
+        .c1{
+            width: 100%;
+        }
 }
 
 @media screen and (max-width: 768px) {
@@ -257,8 +277,20 @@
         font-size: 0.7rem ;
         margin-bottom: 0rem;
     }
-}
+    .pic-offer{
+        height: 80%;
+        width: 100%;
+    }
+    .offer{
+        display: initial;
+        }
+
+        .c1{
+            width: 100%;
+        }
+
 
 @media screen and (max-width:900px) {
 
+}
 }
