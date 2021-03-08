@@ -181,6 +181,27 @@
         margin-top: 2rem;
         text-align: center;
     }
+
+    .search-form{
+        border-radius: 0.8rem;
+        /* border: 2px ridge #aeae81; */
+        text-align: center;
+        justify-content: space-around;
+    }
+    
+    .search-bt{
+        background-color:#aeae81;
+        color:#2e2e2e;
+        text-align: center;
+    }
+
+    .input-search{
+        margin-bottom: 0.7rem;
+    }
+
+    .strong-search{
+        color: #e7e7d5;
+    }
 /******************   VIEW END   *********************/
 
 

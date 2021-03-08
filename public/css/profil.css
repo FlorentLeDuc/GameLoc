@@ -486,13 +486,14 @@ a{
     text-decoration: none;
 }
 
-/* .editprofil{
-    width: 50%;
+.editprofil{
     display: flex;
-    color: red;
-    background-color: red;
-} */
+}
 
+.prenom{
+    background-color: red;
+    color: red;
+}
 
 .form-control:focus {
     box-shadow: none;
