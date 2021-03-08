@@ -23,6 +23,11 @@
         min-height: 100vh;
     }
 
+    h2{
+        text-align: center;
+        color: #e7e7d5;
+    }
+
     .home {
         height: 100vh;
         background-image: url('../uploads/images/pexels-cottonbro-4842488.jpg');
