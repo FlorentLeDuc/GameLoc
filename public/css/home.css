@@ -221,6 +221,9 @@
   /* border-bottom-left-radius: 30%;
   border-bottom-right-radius: 60%; */
 }
+.etapes p{
+    font-size: 20px;
+}
 
 .etape{
     width: 90%;
