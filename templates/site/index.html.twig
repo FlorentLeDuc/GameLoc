@@ -10,7 +10,7 @@
 			<div class="overlay">
 				<div class="container">
 					<div class="home-content">
-						<h1 class="title" style="background-image: url({{ asset('uploads/images/giphy.gif') }})">GameLoc</h1>
+						<h1 class="title" style="background-image: url({{ asset('uploads/images/giphy.jpg') }})">GameLoc</h1>
 						<h2 class="subheading">Bienvenue sur
 							<span class="underline--magical">GameLoc</span>
 							, si tu cherches à louer ou mettre à disposition des Jeux videos ou Jeux de sociétés, tu es au bon endroit.</h2>
@@ -39,10 +39,11 @@
 						<h3>Etape 2</h3>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum recusandae repellat eius ullam, velit sed doloremque blanditiis vitae, porro dignissimos accusantium sequi quis. Officia ipsam veritatis harum, dolorum repudiandae unde!</p>
 					</div>
-					<div class="etape">
+					<div {#id ="scroll-btn"#} class="etape">
 						<h3>Etape 3</h3>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias et quas obcaecati ex aspernatur dolorem aliquam alias dicta doloremque ullam? Eligendi excepturi minima similique voluptas officia voluptatum nisi dolorem ullam!</p>
 					</div>
+					<div id ="scroll-btn"></div>
 				</div>
 			</div>
 		</section>
@@ -50,7 +51,7 @@
 		<table>
 			<tbody>
 				<section class= "decalnav">
-					<div id ="scroll-btn" class="row justify-content-md-center">
+					<div {#id ="scroll-btn"#} class="row justify-content-md-center">
 					    {% for offer in offers %}
 							<section class="cards_body">
 								<div class="blog-post">
