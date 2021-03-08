@@ -27,13 +27,13 @@
             <tr>
                 <td>{{ offer.id }}</td>
                 <td>{{ offer.title }}</td>
-                <td>{{ offer.game.title }}</td>
+                <td>{{ offer.game.title ?? ""}}</td>
                 <td>{{ offer.category.title }}</td>
                 <td>{{ offer.content }}</td>
                 <td>{{ offer.picture }}</td>
                 <td>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ offer.sellingPrice }}</td>
-                <td>{{ offer.rentPrice }}</td>
+                <td>{{ offer.sellingPrice  ?? ""}}</td>
+                <td>{{ offer.rentPrice  ?? ""}}</td>
                 <td>{{ offer.statement }}</td>
                 <td>{{ offer.user.username }}</td>
                 <td>
