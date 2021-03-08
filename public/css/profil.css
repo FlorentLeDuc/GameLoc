@@ -14,7 +14,7 @@
 
     #cards_body{
         position: relative;
-        transform: translate(-65%, 0);
+        /* transform: translate(-65%, 0); */
     }
     .infopers{
         text-align: center;
