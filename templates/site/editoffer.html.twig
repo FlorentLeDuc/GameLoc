@@ -7,8 +7,20 @@
 <div class="rounded container">
     <h1>Modification de l'annonce {{ offer.title }} </h1>
         {{ form_start(form) }}
+                {{ form_row(form.title, {label: 'Le titre de votre annonce'}) }}
+                {{ form_row(form.content, {label: 'Description'}) }}
+                {{ form_row(form.picture, {label: 'une photo'}) }}
+                {{ form_row(form.selling_price, {label: 'Prix vendu'}) }}
+                {{ form_row(form.rent_price, {label: 'Prix loué'}) }}
+                {{ form_row(form.statement, {label: 'Etat du produit'}) }}
+                {{ form_row(form.subcat, {label: 'Jeux-vidéo ou Jeux de société ?'}) }}
+                {{ form_row(form.category, {label: 'Categorie'}) }}
+                {# {{ form_row(form.game, {label: 'Profil du jeu'}) }} #}
                 <button href="{{ path('profil') }}" class="btn profile-button" type="submit">Edit annonce</button>
        {{ form_end(form) }}
+            {{ include('offer/_delete_form.html.twig') }}
+</form>
+
 </div>
 </div>
 {% endblock %}

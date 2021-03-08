@@ -17,6 +17,8 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use App\Form\EditProfilType;
 use App\Entity\User;
+use App\Form\OfferDeleteType;
+
 
 
 class SiteController extends AbstractController
@@ -322,7 +324,7 @@ class SiteController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'editoffer', methods: ['GET', 'POST'])]
+    #[Route('/edit/{id}', name: 'editoffer', methods: ['GET', 'POST', 'DELETE'])]
     public function edit(Request $request, Offer $offer, MailerInterface $mailer): Response
     {
         $form1 = $this->createForm(ContactType::class);
@@ -357,5 +359,17 @@ class SiteController extends AbstractController
             'form' => $form->createView(),
             'form1' => $form1->createView(),
         ]);
+    }
+
+    #[Route('/{id}', name: 'offer_delete', methods: ['DELETE'])]
+    public function delete(Request $request, Offer $offer): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$offer->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($offer);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('profil');
     }
 }

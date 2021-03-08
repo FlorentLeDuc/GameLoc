@@ -23,6 +23,11 @@
         min-height: 100vh;
     }
 
+    h2{
+        text-align: center;
+        color: #e7e7d5;
+    }
+
     .home {
         height: 100vh;
         background-image: url('../uploads/images/pexels-cottonbro-4842488.jpg');
@@ -99,7 +104,7 @@
         color: #dadac2;
     }
     #nav4{
-        color: #bdbd9a;
+        color: #9b9b8e;
     }
     #nav5{
         color: #dadac2;
@@ -235,6 +240,7 @@
 
     .left .content-text {
         color: #aeae81;
+        font-size: 1.0625rem;
     }
 
     .left .content .social a span {
@@ -268,6 +274,13 @@
         
 
     }
+    
+    .center .place a span:hover {
+        background: #aeae81;
+        color: black;
+
+    }
+ 
 
     .center .content .fas:hover {
         background: #aeae81;
@@ -313,7 +326,7 @@
 
     .right form input:focus,
     .right form textarea:focus {
-        outline-color: #3498db;
+        outline-color: black;
     }
 
     .right form input {

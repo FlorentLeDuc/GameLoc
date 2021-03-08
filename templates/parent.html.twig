@@ -91,10 +91,9 @@
 			<section class="footer">
 				<div class="main-content">
 					<div class="left box">
-						<h2>About Me</h2>
+						<h2>Apropos de nous</h2>
 						<div class="content">
-							<p class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae magni aperiam explicabo enim
-																																                        voluptas possimus fuga voluptatum est modi exercitationem.
+							<p class="content-text">GameLoc est une entreprise Francaise crée en 2021 par des Toulousains et Marseillais. Notre objectifs en ces temps de confinements sont de facilités l'accès aux jeux videos et jeux de sociétés entre particuliers.  
 							</p>
 							<div class="social">
 								<a href="#">
@@ -117,33 +116,36 @@
 					</div>
 
 					<div class="center box">
-						<h2>Address</h2>
+						<h2>Adresse</h2>
 						<div class="content">
 							<div class="place">
-								<a href="#">
+								<a class="hover" href="#">
 									<span class="fas fa-map-marker-alt"></span>
 								</a>
 								<span class="text ">Marseille - Toulouse, France</span>
-							</a>
 						</div>
-						<div class="phone">
-							<a href="#">
-								<span class="fas fa-phone-alt"></span>
-							</a>
-							<span class="text ">
-								09 78 38 85 61</span>
+						<div>
+							<div class="place">
+								<a class="hover" href="#">
+									<span class="fas fa-phone-alt"></span>
+								</a>
+								<span class="text ">
+									09 78 38 85 61</span>
+							</div>
 						</div>
-						<div class="email">
-							<a href="gameloc@gmail.com">
-								<span class="fas fa-envelope"></span>
-							</a>
-							<span class="text ">gameloc@gmail.com</span>
+						<div>
+							<div class="place">
+								<a class="hover" href="gameloc@gmail.com">
+									<span class="fas fa-envelope"></span>
+								</a>
+								<span class="text ">gameloc@gmail.com</span>
+							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="right box">
-					<h2 id="contact">Contact us</h2>
+					<h2 id="contact">Contactez nous</h2>
 					<div class="content">
 						{% for message in app.flashes('message') %}
     					<div class="p-3 my-2 rounded-2 success">{{ message }}</div>
