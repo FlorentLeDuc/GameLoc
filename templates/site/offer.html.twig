@@ -1,46 +1,52 @@
 {% extends 'parent.html.twig' %}
 
-{% block title %}{{ offer.title }}
+{% block title %}
 {% endblock %}
 
 
 {% block body %}
 <div class="decalnav">
-	<section class="cards_body">
-		<div class="blog-post_img">
-				<img src="{{ asset('uploads/' ~ offer.picture) }}" alt="Lorem1">
+		<h1 class="offer-titre">{{ offer.title }}</h1>
+	<section class="offer">
+			<div>
+				<img class="pic-offer" src="{{ asset('uploads/' ~ offer.picture) }}" alt="Photo manquante">
 			</div>
-				<div class="blog-post_info">
-					<div class="blog-post_date">
-						<span>{{ offer.user.username }}</span>
-						<span>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</span>
+				<div class="card c1">
+					<div class="card-body">
+
+						<span class="card-subtitle">{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</span>
 					</div>
-						<h1 class="blog-post_title"></h1>
-						<p class="blog-post_text">
+
+						<p class="card-text">
 							{{ offer.content }}
 						</p>
+					<h4 class="card-title">{{ offer.user.username }}</h4>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<h2>Cette annonce t'interresse ? C'est ici pour contacter le vendeur/loueur</h2>
+	<h2 class="offer-titre2">Cette annonce t'interresse ? C'est ici pour contacter le vendeur/loueur</h2>
 	{% if is_granted('ROLE_USER') %}
 	{% for message in app.flashes('message') %}
 		<div class="p-3 my-2 rounded-2 success">{{ message }}</div>
 	{% endfor %}
-	<div class="container">
+	<div class="container form-cont">
 		{{ form_start(form) }}
 					{{ form_row(form.email) }}
 					{{ form_row(form.message) }}
+	<div class="btn-lg1">
 		<button class="btn btn btn-lg">Envoyer</button>
+	</div>
 		{{ form_end(form) }}
 	</div>
 </div>
 
 {% else %}
-<a class="btn btnadmin" href="{{ path('app_register') }}">CREER UN COMPTE</a>
-<a class="btn btnadmin" href="{{ path('app_login') }}">CONNEXION</a>
+<div class="offer-btn">
+	<a class="btn btnadmin" href="{{ path('app_register') }}">CREER UN COMPTE</a>
+	<a class="btn btnadmin" href="{{ path('app_login') }}">CONNEXION</a>
+</div>
 {% endif %}
 
 {% endblock %}
