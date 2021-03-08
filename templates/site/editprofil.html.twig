@@ -37,12 +37,16 @@
                 </div>
                 <div class="">
                 <div class="panel-body bio-graph-info">
-                    <h1>Modification du profil de {{ app.user.username }} </h1>
+                    <h2 class="infopers">Modification du profil de {{ app.user.username }} </h2>
                         {{ form_start(form, {'attr':{'class': 'editprofil'}}) }}
+                            <div>
                                 {{ form_row(form.username, {label: 'Pseudonyme'}) }}
                                 {{ form_row(form.email, {label: 'Email'}) }}
+                            </div>
+                            <div>
                                 {{ form_row(form.adress, {label: 'Adresse'}) }}
                                 {{ form_row(form.zipcode, {label: 'Code postal'}) }}
+                            </div>
                                 <button href="{{ path('profil') }}" class="btn profile-button" type="submit">Save Profile</button>
                         {{ form_end(form) }}
                 </div>
