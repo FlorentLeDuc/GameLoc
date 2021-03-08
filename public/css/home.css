@@ -57,7 +57,7 @@
         bottom: 20px;
         border-radius: 50px;
         cursor: pointer;
-        /* background-image: url('../uploads/images/giphy.gif'); */
+        background-image: url('../uploads/images/giphy.gif');
       }
 
       .scroll-down::before,
