@@ -9,6 +9,9 @@
         {{ form_start(form) }}
                 <button href="{{ path('profil') }}" class="btn profile-button" type="submit">Edit annonce</button>
        {{ form_end(form) }}
+            {{ include('offer/_delete_form.html.twig') }}
+</form>
+
 </div>
 </div>
 {% endblock %}
