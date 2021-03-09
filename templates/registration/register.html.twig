@@ -20,8 +20,8 @@
                         {{ form_row(registrationForm.zipcode, {label: 'Code Postal'}) }}
                         {{ form_row(registrationForm.email, {label: 'Email'}) }}
                         {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
-                        {{ form_row(registrationForm.agreeTerms , {label: 'CGU'}) }}
-
+                        {{ form_row(registrationForm.agreeTerms , {label: 'Je confirme avoir lu et accepté le règlements suivant'}) }}
+                        <a href="{{ path('rgpd') }}">Règlement général sur la protection des données</a>
                         <button type="submit" class="btn">Créez votre compte</button>
                     {{ form_end(registrationForm) }}
                 </div>
