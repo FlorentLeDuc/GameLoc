@@ -29,7 +29,7 @@ class SiteController extends AbstractController
 
         $offers = $offerRepository->findBy([], [ 
             "publication_date" => "DESC",],
-            5
+            6
             );
         $form1 = $this->createForm(ContactType::class);
 

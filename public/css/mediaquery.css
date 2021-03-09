@@ -3,7 +3,7 @@
 *****************************************************/
 
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:700px) {
 
     /* HEADER */
     header {
@@ -15,10 +15,14 @@
         background-image: url('../uploads/images/giphy.jpg')
     }
 
+    .about{
+        border-radius: 10px;
+    }
 
     .about img{
         display: none;
     }
+
 
     .images{
         display: none;
@@ -41,6 +45,7 @@
         padding-left: 0;
         padding-right: 0;
         background-color: black;
+        margin-top: 4%;
     }
 
     a {
@@ -48,13 +53,6 @@
 
     }
 
-    /* header i.icon{
-        position: absolute;
-        right: 30px;
-        top: 32px;
-        z-index: 10;
-        display: block;
-    } */
 
     /* NAV */
 
@@ -75,7 +73,7 @@
         position: relative;
         bottom: 0px;
     }
-
+    
     .main-content {
         flex-wrap: wrap;
         flex-direction: column;
@@ -85,89 +83,6 @@
         margin: 5px 0;
     }
 
-}
-
-@media screen and (max-width: 1068px) {
-    .blog-post{
-        /* max-width: 80rem; */
-        /* border-radius: 0.8rem; */
-        /* margin-bottom: 50rem; */
-        display: flex;
-        flex-direction: column;
-        width: 75vw;
-        height: 40vh;
-    }
-    :first-of-type.blog-post{
-        margin-top: none;
-    }
-
-    .blog-post_img{
-        /* width: auto; */
-        /* height: auto; */
-        /* margin-top: 20rem; */
-        transform: translateX(0rem);
-    }
-    .blog-post_img img{
-        height: 200px;
-        width: 200px;
-        transform: translate(2.75rem , -3.5rem);
-    }
-
-    .cards_body{
-        margin-top: 2.5rem;
-        /* display: block; */
-
-    }
-
-    .blog-post_text{
-
-        font-size: 0.7rem;
-    }
-    .blog-post_title{
-        font-size: 1.1rem;
-    }
-    .blog-post_date span{
-        font-size: 0.8rem;
-        margin: 0;
-    }
-
-    .blog-post_info{
-        transform: translateY(-2rem);
-        width: 20vh;
-        height: 15vh;
-        padding: 1rem;
-    }
-    .blog-post_cta{
-        transform: translateX(0rem);
-        font-size: 0.5rem;
-        padding: 0.25rem 0.5rem;
-    }
-    .blog-post_price{
-        font-size: 0.7rem ;
-        margin-bottom: 0rem;
-    }
-    .bbtn{
-        margin-left: 0px;
-    }
-    .pad_offers{
-        padding-bottom: 5rem;
-    }
-    .pic-offer{
-        height: 80%;
-        width: 100%;
-    }
-    .offer{
-        display: initial;
-        }
-    .c1{
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 868px) {
-    .about{
-        border-radius: 10px;
-    }
     .centre{
         width: max-content;
         padding: 0;
@@ -182,7 +97,7 @@
         grid-template-columns: 1fr;
         margin: 0;
     }
-
+    
     
     .blog-post{
         max-width: 70rem;
@@ -192,95 +107,18 @@
         flex-direction: column;
         height: 90%;
     }
-
+    
     :first-of-type.blog-post{
         margin-top: none;
     }
-
+    
     .cards_body{
         margin-top: 2.5rem;
         /* display: block; */
         height: 60vh;
     }
     .blog-post_text{
-
-        font-size: 0.7rem;
-    }
-    .blog-post_title{
-        font-size: 1.1rem;
-    }
-    .blog-post_date span{
-        font-size: 0.8rem;
-        margin: 0;
-    }
-
-
-    .blog-post_info{
-        transform: translateY(-2rem);
-        width: 20vh;
-        height: 15vh;
-        padding: 1rem;
-    }
-
-    .blog-post_img{
-        height: 200px;
-        width: 200px;   
-        transform: translate(2.75rem , -3.5rem);
-    }
-
-    .blog-post_cta{
-        transform: translateX(0rem);
-        font-size: 0.5rem;
-        padding: 0.25rem 0.5rem;
-    }
-
-    .blog-post_price{
-        font-size: 0.7rem ;
-        margin-bottom: 0rem;
-    }
-    .pic-offer{
-        height: 80%;
-        width: 100%;
-    }
-    .offer{
-        display: initial;
-        }
-        .c1{
-            width: 100%;
-        }
-}
-
-@media screen and (max-width: 768px) {
-    .blog-post{
-        /* padding: 2.5rem; */
-        /* flex-direction: column; */
-        /* border-radius: 0.8rem; */
-        /* margin-bottom: 50rem; */
-        display: flex;
-        flex-direction: column;
-    }
-
-    .blog-post_img{
-        /* width: auto; */
-        height: auto;
-        /* transform: translate(0, -8rem); */
-        /* margin-top: 10rem; */
-        transform: translateX(0rem);
-        box-shadow: none;
-        border-radius: 100px;
-    }
-
-
-    :first-of-type.blog-post{
-        margin-top: none;
-    }
-
-    .cards_body{
-        margin-top: 2.5rem;
-        /* display: block; */
-    }
-    .blog-post_text{
-
+    
         font-size: 0.7rem;
     }
     .blog-post_title{
@@ -290,26 +128,90 @@
         font-size: 0.8rem;
         margin: 0;
     }
-    header nav .nav-link { 
-        
-        margin-top: 4%;
-    }
-
-
-
+    
+    
     .blog-post_info{
         transform: translateY(-2rem);
         width: 20vh;
         height: 15vh;
         padding: 1rem;
     }
+    
+    .blog-post_img{
+        height: 200px;
+        width: 200px;   
+        transform: translate(2.75rem , -3.5rem); 
+        height: auto;
+        transform: translateX(0rem);
+        box-shadow: none;
+        border-radius: 100px;
 
+    }
+    
     .blog-post_cta{
         transform: translateX(0rem);
         font-size: 0.5rem;
         padding: 0.25rem 0.5rem;
     }
+    
+    .blog-post_price{
+        font-size: 0.7rem ;
+        margin-bottom: 0rem;
+    }
+    .pic-offer{
+        height: 80%;
+        width: 100%;
+    }
+    .offer{
+        display: initial;
+    }
 
+    .c1{
+        width: 100%;
+    }
+
+
+    .blog-post{
+        /* padding: 2.5rem; */
+        /* flex-direction: column; */
+        /* border-radius: 0.8rem; */
+        /* margin-bottom: 50rem; */
+        display: flex;
+        flex-direction: column;
+    }        
+    
+    :first-of-type.blog-post{
+        margin-top: none;
+    }
+    
+    .cards_body{
+        margin-top: 2.5rem;
+        /* display: block; */
+    }
+    .blog-post_text{
+    
+        font-size: 0.7rem;
+    }
+
+    .blog-post_date span{
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    
+    
+    .blog-post_info{
+        transform: translateY(-2rem);
+        width: 20vh;
+        height: 15vh;
+        padding: 1rem;
+    }
+    
+    .blog-post_cta{
+        transform: translateX(0rem);
+        font-size: 0.5rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
     .blog-post_price{
         font-size: 0.7rem ;
         margin-bottom: 0rem;
@@ -321,13 +223,10 @@
     .offer{
         display: initial;
         }
-
-        .c1{
-            width: 100%;
-        }
-
-
-@media screen and (max-width:900px) {
-
+    
+    .c1{
+        width: 100%;
+    }
 }
-}
+
+
