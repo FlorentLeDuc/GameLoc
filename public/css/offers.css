@@ -7,10 +7,6 @@
         margin-bottom: 80px;
     }
 
-    .blog-post_img {
-        width: 100%;
-    }
-
     .doublecard{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -42,9 +38,8 @@
     }
 
     .blog-post_img{
-        min-width: 18rem;
-        max-width: 18rem;
-        height: 16rem;
+        width: 17rem;
+        height: 17rem;
         transform: translateX(-1.5rem);
         position: relative;
         border-radius: 0.7rem;
