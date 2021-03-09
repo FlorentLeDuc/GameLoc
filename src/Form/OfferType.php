@@ -37,8 +37,12 @@ class OfferType extends AbstractType
             ])
             // ->add('publication_date')
             ->add('selling_price', TextType::class)
-            ->add('rent_price', TextType::class)
-            ->add('statement', TextType::class)
+            ->add('rent_price', TextType::class,[
+                'mapped' => false,
+            ])
+            ->add('statement', TextType::class,[
+                'mapped' => false,
+            ])
             // ->add('user', EntityType::class, [
             //     // looks for choices from this entity
             //     'class' => User::class,
