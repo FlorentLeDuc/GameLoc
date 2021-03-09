@@ -28,7 +28,7 @@
 		</div>
 	</section>
 
-	<h2 class="offer-titre2">Cette annonce t'interresse ? C'est ici pour contacter le vendeur/loueur</h2>
+	<h2 class="offer-titre2">Cette annonce t'intéresse ? C'est ici pour contacter le vendeur/loueur</h2>
 	{% if is_granted('ROLE_USER') %}
 	{% for message in app.flashes('message') %}
 		<div class="p-3 my-2 rounded-2 success">{{ message }}</div>
