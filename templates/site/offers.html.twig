@@ -16,6 +16,7 @@
         </form>
     </div>
 </section>
+<section class="doublecard">
 	{% for offer in offers %}
 		<section class="cards_body">
 			<div class="blog-post">
@@ -30,7 +31,10 @@
 					<h1 class="blog-post_title">{{ offer.title|striptags|slice(0, 17)|raw }}...</h1>
 					<p class=" blog-post_price">PRIX<i class="fas fa-euro-sign"></i></p>
 					<p class="blog-post_text">{{ offer.category.title }}</p>
-					<a href="{{ path('offer', {'id': offer.id}) }}" class="blog-post_cta">En savoir plus</a> 
+					<div id="boutonsoffres">
+						<a href="{{ path('offer', {'id': offer.id}) }}" class="blog-post_cta">En savoir plus</a> 
+						<a href="{{ path('offer', {'id': offer.id}) }}#offer-titre2" class="blog-post_cta">Contacter le loueur</a>
+					</div> 
 				</div> 
 			</div>
 		</section>

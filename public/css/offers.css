@@ -11,59 +11,53 @@
         width: 100%;
     }
 
+    .doublecard{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 100px;
+    }
+    
     .cards_body{
         width: 100%;
         display: flex;
-        /* height: 100vh; */
-        /* align-items: center; */
         justify-content: center;
         background-color: #2e2e2e;
-        padding: 0 1.5rem;
+        height: 36vh;
     }
-
+    
     .blog-post{
-        height: 20vh;
-        max-width: 98rem;
-        /* padding: 2.5rem; */
+        height: 33vh;
+        width: 90%;
         background-color: #aeae81;
         display: flex;
-        box-sizing: 0 1.4rem 8rem rgba(0,0,0,.2);   
+        /* box-sizing: 0 1.4rem 8rem rgba(0,0,0,.2);    */
         align-items: center;
-        margin-bottom: 8rem;
-    }
-
-    :first-of-type.blog-post{
-
-        border-radius: 0.8rem;
-        border: 2px ridge #2e2e2e;
+        margin-bottom: 4rem;
+        box-shadow: -1px 3px 20px black inset;
+        border-radius: 0.7rem;
     }
 
     .blog-post_info{
-        background-color: #fff;
-        border-radius: .8rem;
-        box-shadow: -1px 3px 10px black inset;
-        padding: 1.25rem;
-        min-width: 16rem;
-        max-width: 16rem;
-        height: 14rem;
-        transform: translateX(2rem);
+        width: 57%;
     }
 
     .blog-post_img{
         min-width: 18rem;
         max-width: 18rem;
         height: 16rem;
-        transform: translateX(1.5rem);
+        transform: translateX(-1.5rem);
         position: relative;
+        border-radius: 0.7rem;
     }
-
+    
     .blog-post_img img{
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
-        border-radius: .8rem;
-        border: 2px ridge #2e2e2e;
+        border-radius: .7rem;
+        box-shadow: -1px 3px 20px black;
+        /* border: 2px ridge #2e2e2e; */
     }
 
     .blog-post_img::before{
@@ -91,13 +85,18 @@
         font-size: 1.2rem;
         /* margin: 1.5rem 0 2rem; */
         text-transform: uppercase;
-        color:#aeae81;
+        color:#2e2e2e;
     }
 
     .blog-post_text{
         margin-bottom: 3rem;
         font-size: 1rem;
         color: rgba(0, 0, 0,.7);
+    }
+
+    #boutonsoffres{
+        display: flex;
+        justify-content: space-around;
     }
 
     .blog-post_cta{
@@ -110,10 +109,6 @@
         background-image: linear-gradient(to right, #151515 0%, #aeae81 100%);
         border-radius: .8rem;
         text-decoration: none;
-        transform: translateX(19rem);
-        position: absolute;
-        top: 70%;
-        left: 40%;
     }
 
     .blog-post_cta:hover{
