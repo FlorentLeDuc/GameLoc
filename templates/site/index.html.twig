@@ -15,14 +15,14 @@
 							<span class="underline--magical">GameLoc</span>
 							, si tu cherches à louer ou mettre à disposition des Jeux videos ou Jeux de sociétés, tu es au bon endroit.</h2>
 						<buton>
-								<a href="#about" class="btn button">EN SAVOIR PLUS</a>
+								<a href="#savoirplus" class="btn button">EN SAVOIR PLUS</a>
 							</buton>
 							<buton>
                                 <a href="{{ path('app_register') }}" class="btn button">CREER UN COMPTE</a>
                             </buton>
 					</div>
 					<a href="#scroll-btn">
-      					<div class="scroll-down"></div>
+      					<div id="savoirplus" class="scroll-down"></div>
    					 </a>
 				</div>
 			</div>
@@ -33,8 +33,8 @@
 				<h2 class="centre">Comment ça marche ?</h2>
 				<div>
 					<div class="images">
-						<img src="{{ asset('uploads/images/unnamed.png') }}" alt="game">
-						<img src="{{ asset('uploads/images/persos.png') }}" alt="game">
+						<img id="cartes" src="{{ asset('uploads/images/unnamed.png') }}" alt="game">
+						<img id="persos" src="{{ asset('uploads/images/persos.png') }}" alt="game">
 					</div>
 					<div class="etapes">
 						<div class="etape">
@@ -52,7 +52,7 @@
 						<div></div>
 					</div>
 				</div>
-				<img src="{{ asset('uploads/images/boards.png') }}" alt="game">
+				<img id="plateaux" src="{{ asset('uploads/images/boards.png') }}" alt="game">
 			</div>
 		</section>
 		<div  id ="scroll-btn" class="offer-index"></div>
