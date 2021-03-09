@@ -29,7 +29,7 @@
 						<span>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</span>
 					</div> 
 					<h1 class="blog-post_title">{{ offer.title|striptags|slice(0, 17)|raw }}...</h1>
-					<p class=" blog-post_price">PRIX<i class="fas fa-euro-sign"></i></p>
+					{# <p class=" blog-post_price">PRIX<i class="fas fa-euro-sign"></i></p> #}
 					<p class="blog-post_text">{{ offer.category.title }}</p>
 					<div id="boutonsoffres">
 						<a href="{{ path('offer', {'id': offer.id}) }}" class="blog-post_cta">En savoir plus</a> 
