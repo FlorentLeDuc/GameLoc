@@ -114,7 +114,6 @@ class SiteController extends AbstractController
 
         $mot = $request->get('mot');
         // DEBUG
-        dump($mot);
         if (!empty($mot)) {
             // on va lancer la recherche sur le mot
             // recherche exacte
@@ -371,5 +370,32 @@ class SiteController extends AbstractController
         }
 
         return $this->redirectToRoute('profil');
+    }
+
+    #[Route('/rgpd', name: 'rgpd', methods: ['GET', 'POST'])]
+    public function rgpd(MailerInterface $mailer, Request $request): Response
+    {
+
+        $form1 = $this->createForm(ContactType::class);
+        $contact = $form1->handleRequest($request);
+
+        if($form1->isSubmitted() && $form1->isValid()){
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to('contact@gameloc.com')
+                ->subject('Contact depuis le site')
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'sujet' => $contact->get('sujet')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'message' => $contact->get('message')->getData()
+                ]);
+            $mailer->send($email);
+
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+        }
+        return $this->render('site/rgpd.html.twig', [
+            'form1' => $form1->createView()
+        ]);
     }
 }
