@@ -235,6 +235,15 @@
         .c1{
             width: 100%;
         }
+
+        .profilnav{
+            position: fixed;
+            width: 20%;
+        }
+
+        .profile-nav .user-heading{
+            padding: 30px 0;
+        }
     /*****************************************************
     *                    MEDIA QUERY                     *
     *****************************************************/
@@ -251,6 +260,10 @@
         .title{
             font-size: 15vw;
             background-image: url('../uploads/images/giphy.jpg')
+        }
+
+        .subheading{
+            font-size: 1.25rem;
         }
 
         .about{
@@ -466,6 +479,17 @@
         .c1{
             width: 100%;
         }
+
+        .profilnav{
+            position: relative;
+            width: 100%;
+        }
+
+        .bio-desk {
+            width: 110%;
+        }
+    
+
     /*****************************************************
     *                    MEDIA QUERY                     *
     *****************************************************/

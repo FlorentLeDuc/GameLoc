@@ -199,7 +199,7 @@
     left: 0;
     right: 0;
     border-top-left-radius: 850px 1000px;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 1000px 200px;
     border-bottom-left-radius: 30%;
     border-bottom-right-radius: 50% 800px;
     padding-bottom: 30px;
@@ -238,6 +238,9 @@
   display: flex;
 }
 
+.preview{
+  padding-top: 50px;
+}
 
 .images{
   width: 50%;
