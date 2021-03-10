@@ -59,7 +59,7 @@
 		<h2> Aperçu des annonces !</h2>
 		<table>
 			<tbody>
-				<section class= "decalnav">
+				<section class= "preview">
 					<div id ="scroll-btn" class="row justify-content-md-center doublecard">
 					    {% for offer in offers %}
 							<section class="cards_body">
@@ -73,7 +73,7 @@
 											<span>{{ offer.publicationDate ? offer.publicationDate|date('Y-m-d H:i:s') : '' }}</span>
 										</div> 
 										<h1 class="blog-post_title">{{ offer.title }}</h1>
-										<p>PRIX<i class="fas fa-euro-sign"></i></p>
+										{# <p>PRIX<i class="fas fa-euro-sign"></i></p> #}
 										<p class="blog-post_text">{{ offer.category.title }}</p>
 										<a href="{{ path('offer', {'id': offer.id}) }}" class="blog-post_cta">En savoir plus</a> 
 

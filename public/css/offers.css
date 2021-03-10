@@ -34,11 +34,13 @@
     }
 
     .blog-post_info{
-        width: 57%;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .blog-post_img{
-        width: 17rem;
+        width: 23rem;
         height: 17rem;
         transform: translateX(-1.5rem);
         position: relative;

@@ -8,6 +8,11 @@
         margin-top: 30px;
     }
 
+    .profilnav{
+        position: fixed;
+        width: 15%;
+    }
+
     .panel-footer .btn{
         background: #e3dc95;
     }
@@ -185,7 +190,7 @@
     }
 
     .bio-desk {
-        width: 60%;
+        width: 200%;
     }
 
     .bio-desk h4 {
